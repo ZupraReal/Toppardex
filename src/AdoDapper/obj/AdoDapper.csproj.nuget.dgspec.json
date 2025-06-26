@@ -1,0 +1,124 @@
+{
+  "format": 1,
+  "restore": {
+    "/mnt/Datos/top/src/AdoDapper/AdoDapper.csproj": {}
+  },
+  "projects": {
+    "/mnt/Datos/top/src/AdoDapper/AdoDapper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/Datos/top/src/AdoDapper/AdoDapper.csproj",
+        "projectName": "AdoDapper",
+        "projectPath": "/mnt/Datos/top/src/AdoDapper/AdoDapper.csproj",
+        "packagesPath": "/home/et12alumno/.nuget/packages/",
+        "outputPath": "/mnt/Datos/top/src/AdoDapper/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/mnt/Datos/top/src/top/top.csproj": {
+                "projectPath": "/mnt/Datos/top/src/top/top.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/mnt/Datos/top/src/top/top.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/Datos/top/src/top/top.csproj",
+        "projectName": "top",
+        "projectPath": "/mnt/Datos/top/src/top/top.csproj",
+        "packagesPath": "/home/et12alumno/.nuget/packages/",
+        "outputPath": "/mnt/Datos/top/src/top/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

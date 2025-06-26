@@ -1,0 +1,11 @@
+/mnt/Datos/top/src/top/bin/Debug/net8.0/top.deps.json
+/mnt/Datos/top/src/top/bin/Debug/net8.0/top.dll
+/mnt/Datos/top/src/top/bin/Debug/net8.0/top.pdb
+/mnt/Datos/top/src/top/obj/Debug/net8.0/top.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/Datos/top/src/top/obj/Debug/net8.0/top.AssemblyInfoInputs.cache
+/mnt/Datos/top/src/top/obj/Debug/net8.0/top.AssemblyInfo.cs
+/mnt/Datos/top/src/top/obj/Debug/net8.0/top.csproj.CoreCompileInputs.cache
+/mnt/Datos/top/src/top/obj/Debug/net8.0/top.dll
+/mnt/Datos/top/src/top/obj/Debug/net8.0/refint/top.dll
+/mnt/Datos/top/src/top/obj/Debug/net8.0/top.pdb
+/mnt/Datos/top/src/top/obj/Debug/net8.0/ref/top.dll

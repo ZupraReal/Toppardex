@@ -1,0 +1,15 @@
+/mnt/Datos/top/src/AdoDapper/bin/Debug/net8.0/AdoDapper.deps.json
+/mnt/Datos/top/src/AdoDapper/bin/Debug/net8.0/AdoDapper.dll
+/mnt/Datos/top/src/AdoDapper/bin/Debug/net8.0/AdoDapper.pdb
+/mnt/Datos/top/src/AdoDapper/bin/Debug/net8.0/top.dll
+/mnt/Datos/top/src/AdoDapper/bin/Debug/net8.0/top.pdb
+/mnt/Datos/top/src/AdoDapper/obj/Debug/net8.0/AdoDapper.csproj.AssemblyReference.cache
+/mnt/Datos/top/src/AdoDapper/obj/Debug/net8.0/AdoDapper.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/Datos/top/src/AdoDapper/obj/Debug/net8.0/AdoDapper.AssemblyInfoInputs.cache
+/mnt/Datos/top/src/AdoDapper/obj/Debug/net8.0/AdoDapper.AssemblyInfo.cs
+/mnt/Datos/top/src/AdoDapper/obj/Debug/net8.0/AdoDapper.csproj.CoreCompileInputs.cache
+/mnt/Datos/top/src/AdoDapper/obj/Debug/net8.0/AdoDapper.csproj.CopyComplete
+/mnt/Datos/top/src/AdoDapper/obj/Debug/net8.0/AdoDapper.dll
+/mnt/Datos/top/src/AdoDapper/obj/Debug/net8.0/refint/AdoDapper.dll
+/mnt/Datos/top/src/AdoDapper/obj/Debug/net8.0/AdoDapper.pdb
+/mnt/Datos/top/src/AdoDapper/obj/Debug/net8.0/ref/AdoDapper.dll

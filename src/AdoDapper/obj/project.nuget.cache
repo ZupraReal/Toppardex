@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uZ7ITNORDXuDCkEKAOwDHl4RybmsOLlGjc4X0h1/1foPRdO7phs5+MO1cIpq/p+OTtC47YCBDDdgBpe6eWnCXw==",
+  "success": true,
+  "projectFilePath": "/mnt/Datos/top/src/AdoDapper/AdoDapper.csproj",
+  "expectedPackageFiles": [
+    "/home/et12alumno/.nuget/packages/dapper/2.1.35/dapper.2.1.35.nupkg.sha512"
+  ],
+  "logs": []
+}
