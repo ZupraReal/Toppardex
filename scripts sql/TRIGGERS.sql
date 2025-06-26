@@ -6,7 +6,7 @@ DROP TRIGGER IF EXISTS BefInsClientes$$
 CREATE TRIGGER BeforeInsertCliente BEFORE INSERT ON Clientes
 FOR EACH ROW
 BEGIN
-   IF (NEW.FechaDeNacimiento <=17) THEN
+   IF (NEW.fechaDeNacimiento <=17) THEN
    SIGNAL SQLSTATE '45000'
    SET MESSAGE_TEXT ='no sos mayor de edad';
    END IF;

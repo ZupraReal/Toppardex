@@ -9,7 +9,7 @@ CREATE TABLE Clientes (
 	nombre varchar(45) not null,
 	apellido varchar(45) not null,
     pais varchar(45) not null,
-	fechadenacimiento date not null,
+	fechaDeNacimiento date not null,
 	primary key (idCliente)
 );
 
