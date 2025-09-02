@@ -17,8 +17,8 @@ CREATE TABLE Marca (
 	idMarca smallint unsigned AUTO_INCREMENT not null,
 	nombre varchar(45) not null,
 	primary key (idMarca)
-  );
-  
+	);
+
 CREATE TABLE Productos (
 	idProducto smallint unsigned not null,
 	nombre varchar(45) not null,
@@ -53,4 +53,4 @@ CREATE TABLE ProductoPedidos (
 	primary key (idPedido, idProducto, numerotalle),
 	foreign key (idPedido) references Pedidos(idPedido),
 	foreign key (idProducto, numerotalle) references Talle(idProducto, numerotalle)
-   );
+);

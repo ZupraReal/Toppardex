@@ -22,6 +22,6 @@ BEGIN
     Declare Zapatilla VARCHAR(45);
     SELECT nombre INTO Zapatilla
     FROM Producto 
-    WHERE nombre= unnombre;
+    WHERE nombre = unnombre;
     RETURN Zapatilla;
 END $$

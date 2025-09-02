@@ -9,3 +9,15 @@
 /mnt/Datos/top/src/top/obj/Debug/net8.0/refint/top.dll
 /mnt/Datos/top/src/top/obj/Debug/net8.0/top.pdb
 /mnt/Datos/top/src/top/obj/Debug/net8.0/ref/top.dll
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\bin\Debug\net8.0\top.deps.json
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\bin\Debug\net8.0\top.dll
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\bin\Debug\net8.0\top.pdb
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.AssemblyInfoInputs.cache
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.AssemblyInfo.cs
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.csproj.CoreCompileInputs.cache
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.sourcelink.json
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.dll
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\refint\top.dll
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.pdb
+c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\ref\top.dll

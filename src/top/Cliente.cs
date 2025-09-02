@@ -5,6 +5,6 @@ public class Cliente
     public string Nombre { get; set; }
     public string Apellido { get; set; }
     public string Pais { get; set; }
-    public byte FechaDeNacimiento { get; set; }
+    public DateTime FechaDeNacimiento { get; set; }
     public IEnumerable<Pedido> Pedidos { get; set; } = new List<Pedido>();
 }

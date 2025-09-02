@@ -8,7 +8,7 @@ Clientes{
    varchar(45) nombre
    varchar(45) apellido
    varchar(45) pais
-   TINYINTUNSIGNED edad
+   date fechaDeNacimiento
 }
 
 

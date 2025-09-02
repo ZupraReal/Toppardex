@@ -1,5 +1,5 @@
 SOURCE Scripts.sql
-SOURCE TRIGGERS.sql
-SOURCE PROCEDURES.sql
-SOURCE FUNCIONES.sql
+SOURCE Triggers.sql
+SOURCE Procedures.sql
+SOURCE Funciones.sql
 SOURCE Users Grant.sql
