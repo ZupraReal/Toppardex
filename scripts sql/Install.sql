@@ -1,5 +1,5 @@
-SOURCE Scripts.sql
-SOURCE Triggers.sql
-SOURCE Procedures.sql
-SOURCE Funciones.sql
-SOURCE Users Grant.sql
+SOURCE 01 Toppardex-ddl.sql
+SOURCE 03 Procedures.sql
+SOURCE 04 Funtions.sql
+SOURCE 05 Triggers.sql
+SOURCE 06 InsertsPrueba.sql

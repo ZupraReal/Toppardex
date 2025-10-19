@@ -1,36 +1,42 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/Datos/top/src/AdoDapper.Test/AdoDapper.Test.csproj": {}
+    "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper.Test\\AdoDapper.Test.csproj": {}
   },
   "projects": {
-    "/mnt/Datos/top/src/AdoDapper.Test/AdoDapper.Test.csproj": {
+    "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper.Test\\AdoDapper.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/Datos/top/src/AdoDapper.Test/AdoDapper.Test.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper.Test\\AdoDapper.Test.csproj",
         "projectName": "AdoDapper.Test",
-        "projectPath": "/mnt/Datos/top/src/AdoDapper.Test/AdoDapper.Test.csproj",
-        "packagesPath": "/home/et12alumno/.nuget/packages/",
-        "outputPath": "/mnt/Datos/top/src/AdoDapper.Test/obj/",
+        "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper.Test\\AdoDapper.Test.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper.Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/mnt/Datos/top/src/AdoDapper/AdoDapper.csproj": {
-                "projectPath": "/mnt/Datos/top/src/AdoDapper/AdoDapper.csproj"
+              "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj"
               },
-              "/mnt/Datos/top/src/top/top.csproj": {
-                "projectPath": "/mnt/Datos/top/src/top/top.csproj"
+              "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\top\\top.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\top\\top.csproj"
               }
             }
           }
@@ -39,7 +45,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -94,34 +106,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/mnt/Datos/top/src/AdoDapper/AdoDapper.csproj": {
+    "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/Datos/top/src/AdoDapper/AdoDapper.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
         "projectName": "AdoDapper",
-        "projectPath": "/mnt/Datos/top/src/AdoDapper/AdoDapper.csproj",
-        "packagesPath": "/home/et12alumno/.nuget/packages/",
-        "outputPath": "/mnt/Datos/top/src/AdoDapper/obj/",
+        "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/mnt/Datos/top/src/top/top.csproj": {
-                "projectPath": "/mnt/Datos/top/src/top/top.csproj"
+              "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\top\\top.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\top\\top.csproj"
               }
             }
           }
@@ -130,7 +148,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -157,26 +181,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/mnt/Datos/top/src/top/top.csproj": {
+    "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\top\\top.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/Datos/top/src/top/top.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\top\\top.csproj",
         "projectName": "top",
-        "projectPath": "/mnt/Datos/top/src/top/top.csproj",
-        "packagesPath": "/home/et12alumno/.nuget/packages/",
-        "outputPath": "/mnt/Datos/top/src/top/obj/",
+        "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\top\\top.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\top\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -189,7 +219,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -210,7 +246,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

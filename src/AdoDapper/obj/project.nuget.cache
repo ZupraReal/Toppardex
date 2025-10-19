@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FgcFrFqybHU=",
+  "dgSpecHash": "Y/tn5m/mBbM=",
   "success": true,
-  "projectFilePath": "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\MarketWeight\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Lab15-PC01\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512"
+    "C:\\Users\\Usuario\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512"
   ],
   "logs": []
 }
