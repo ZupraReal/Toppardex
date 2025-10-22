@@ -14,7 +14,7 @@ public class RepoClienteTest : TestBase
 
         var cliente = new Cliente
         {
-            Nombre = "Judas",
+            Nombre = "Ziad",
             Apellido = "PIn",
             Pais = "Argentina",
             FechaDeNacimiento = new DateTime(2006, 5, 21)

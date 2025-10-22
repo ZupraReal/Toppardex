@@ -16,6 +16,6 @@ INSERT INTO Marca (nombre) VALUES
 ('Laposta'),
 ('Incel');
 
+CALL AltaCliente('Judas', 'Pin', 'Argentina', '2007-03-15');
+CALL AltaCliente( 'Facundo', 'Perez', 'Argentina', '2006-09-02');
 
-
-/*Cuando se inicia la interfaz MVC, en el apartado de Privacity, tienen que aparecer todas las marcas

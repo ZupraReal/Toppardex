@@ -63,3 +63,17 @@ BEGIN
 END $$
 DELIMITER ;
 
+DROP PROCEDURE IF EXISTS AltaCliente $$
+CREATE PROCEDURE AltaCliente(
+    IN xidCliente SMALLINT UNSIGNED,
+    IN xnombre VARCHAR(45),
+    IN xapellido VARCHAR(45),
+    IN xpais VARCHAR(45),
+    IN xfecha DATE
+)
+BEGIN
+    INSERT INTO Clientes (idCliente, nombre, apellido, pais, fechaDeNacimiento)
+    VALUES (xidCliente, xnombre, xapellido, xpais, xfecha);
+END $$
+
+
