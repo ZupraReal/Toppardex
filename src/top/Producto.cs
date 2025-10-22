@@ -2,12 +2,12 @@ namespace Topardex;
 
 public class Producto
 {
-    public ushort IdProducto { get; set; }
+    public int IdProducto { get; set; }
     public required string Nombre { get; set; }
     public decimal Precio { get; set; }
-    public ushort Stock { get; set; }
+    public int Stock { get; set; }
 
-    public ushort IdMarca { get; set; }
+    public int IdMarca { get; set; }
     public Marca Marca { get; set; }
 
     public string? Descripcion { get; set; }

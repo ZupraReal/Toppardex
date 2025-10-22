@@ -2,7 +2,7 @@ namespace Topardex;
 
 public class Pedido
 {
-    public ushort IdPedido { get; set; }
+    public int IdPedido { get; set; }
     public DateTime FechaVenta { get; set; } = DateTime.Now;
 
     public Cliente Cliente { get; set; }

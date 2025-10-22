@@ -24,12 +24,12 @@ public class RepoProducto : RepoGenerico
         return Conexion.Query<Producto>("SELECT * FROM Producto");
     }
 
-    public Producto? Detalle(ushort id)
+    public Producto? Detalle(int id)
     {
         return Conexion.QueryFirstOrDefault<Producto>("SELECT * FROM Producto WHERE IdProducto = @id", new { id });
     }
 
-    public IEnumerable<Producto> ObtenerPorMarca(ushort idMarca)
+    public IEnumerable<Producto> ObtenerPorMarca(int idMarca)
     {
         return Conexion.Query<Producto>("SELECT * FROM Producto WHERE IdMarca = @idMarca", new { idMarca });
     }

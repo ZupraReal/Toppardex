@@ -9,7 +9,7 @@ public interface IAdo
     // Productos
     void AgregarProducto(Producto producto);
     List<Producto> ListarProductos();
-    Producto? ObtenerProductoPorId(ushort id);
+    Producto? ObtenerProductoPorId(int id);
 
     // Clientes
     void AgregarCliente(Cliente cliente);

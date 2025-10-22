@@ -8,7 +8,7 @@ public class RepoPedido : RepoGenerico
 {
     public RepoPedido(IDbConnection conexion) : base(conexion) { }
 
-    public void Alta(Pedido pedido)
+    public void Alta(IRepoPedido pedido)
     {
         var parametros = new DynamicParameters();
         parametros.Add("@xidcliente", pedido.IdCliente);
@@ -22,7 +22,7 @@ public class RepoPedido : RepoGenerico
         return Conexion.Query<Pedido>("SELECT * FROM Pedido");
     }
 
-    public Pedido? Detalle(ushort id)
+    public Pedido? Detalle(int id)
     {
         return Conexion.QueryFirstOrDefault<Pedido>("SELECT * FROM Pedido WHERE IdPedido = @id", new { id });
     }

@@ -24,7 +24,7 @@ public class RepoCliente : RepoGenerico
         return Conexion.Query<Cliente>("SELECT * FROM Cliente");
     }
 
-    public Cliente? Detalle(ushort id)
+    public Cliente? Detalle(int id)
     {
         return Conexion.QueryFirstOrDefault<Cliente>("SELECT * FROM Cliente WHERE IdCliente = @id", new { id });
     }

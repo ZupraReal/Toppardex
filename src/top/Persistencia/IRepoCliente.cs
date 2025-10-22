@@ -2,7 +2,7 @@ namespace Topardex.top.Persistencia;
 
 public interface IRepoCliente
 {
-    public ushort IdCliente { get; set; }
+    public int IdCliente { get; set; }
     public  string Nombre { get; set; }
     public  string Apellido { get; set; }
     public string Pais { get; set; }

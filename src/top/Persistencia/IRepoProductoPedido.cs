@@ -2,10 +2,10 @@ namespace Topardex.top.Persistencia;
 
 public class IRepoProductoPedido
 {
-    public ushort IdProductoPedido { get; set; }
-    public ushort IdPedido { get; set; }
-    public ushort IdProducto { get; set; }
+    public int IdProductoPedido { get; set; }
+    public int IdPedido { get; set; }
+    public int IdProducto { get; set; }
 
-    public ushort Cantidad { get; set; }
+    public int Cantidad { get; set; }
     public decimal PrecioUnitario { get; set; }
 }

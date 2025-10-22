@@ -1,4 +1,5 @@
 using Microsoft.Data.SqlClient;
+using Topardex.Ado.Dapper;
 using Topardex.top.Persistencia;
 using Xunit;
 
@@ -14,7 +15,7 @@ public class RepoPedidoTest
         using var conexion = new SqlConnection(_connectionString);
         var repo = new RepoPedido(conexion);
 
-        var pedido = new Pedido
+        var pedido = new IRepoPedido
         {
             IdCliente = 1,
             FechaVenta = DateTime.Now

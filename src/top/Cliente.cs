@@ -2,7 +2,7 @@ namespace Topardex;
 
 public class Cliente
 {
-    public ushort IdCliente { get; set; }
+    public int IdCliente { get; set; }
     public required string Nombre { get; set; }
     public required string Apellido { get; set; }
     public string Pais { get; set; } = "Argentina";

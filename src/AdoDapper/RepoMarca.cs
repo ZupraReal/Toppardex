@@ -20,7 +20,7 @@ public class RepoMarca : RepoGenerico
         return Conexion.Query<Marca>("SELECT * FROM Marca");
     }
 
-    public Marca? Detalle(ushort id)
+    public Marca? Detalle(int id)
     {
         return Conexion.QueryFirstOrDefault<Marca>("SELECT * FROM Marca WHERE IdMarca = @id", new { id });
     }
