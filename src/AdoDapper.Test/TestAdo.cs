@@ -1,22 +1,18 @@
 using System.Data;
-using Topardex;
+using Microsoft.Extensions.Configuration;
 using MySqlConnector;
 
-namespace AdoDapper.Test;
+namespace MarketWeight.Ado.Dapper.Test;
 
-public class TestAdo
+public class TestBase
 {
-    protected readonly IAdo Ado;
-
-    IDbConnection _conexion;
-
-    private const string _cadena = "Server=localhost;Database=5to_Toppardex;user=5to_agbd;Password=Trigg3rs!";
-
-    public TestAdo() : this(_cadena) {}
-
-    public TestAdo(string cadena)
+    protected readonly IDbConnection Conexion;
+    public TestBase()
     {
-        _conexion = new MySqlConnection(_cadena);
-        Ado = new AdoDaper(_conexion);
+        IConfiguration config = new ConfigurationBuilder()
+            .AddJsonFile("appSettings.json", optional: true, reloadOnChange: true)
+            .Build();
+        string cadena = config.GetConnectionString("MySQL")!;
+        Conexion = new MySqlConnection(cadena);
     }
 }

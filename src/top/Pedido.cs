@@ -1,9 +1,14 @@
 namespace Topardex;
+
 public class Pedido
 {
     public ushort IdPedido { get; set; }
-    public ushort IdCliente { get; set; }
-    public DateTime FechaVenta { get; set; }
-    public IEnumerable<ProductoPedido> Productos { get; set; } = new List<ProductoPedido>();
-    public Cliente Cliente { get; set; }   
+    public DateTime FechaVenta { get; set; } = DateTime.Now;
+
+    public Cliente Cliente { get; set; }
+
+    public List<ProductoPedido> Productos { get; set; } = new();
+
+    public decimal Total => Productos.Sum(p => p.Subtotal);
+    public string Estado { get; set; } = "Pendiente";
 }

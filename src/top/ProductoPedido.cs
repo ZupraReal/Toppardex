@@ -1,11 +1,12 @@
 namespace Topardex;
+
 public class ProductoPedido
 {
-    public ushort IdPedido { get; set; }
-    public required Producto Producto { get; set; }
-    public byte NumeroTalle { get; set; } 
-    public decimal Precio { get; set; }
+    public ushort IdProductoPedido { get; set; }
+    public Producto Producto { get; set; }
+
     public ushort Cantidad { get; set; }
-    public ushort IdProducto { get; set; }        
-    
+    public decimal PrecioUnitario { get; set; }
+
+    public decimal Subtotal => Cantidad * PrecioUnitario;
 }

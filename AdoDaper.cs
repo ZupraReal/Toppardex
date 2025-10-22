@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace AdoDapper;
 
-public class AdoDaper : IAdo
+public class AdoDaper
 {
     private readonly IDbConnection _conexion;
 

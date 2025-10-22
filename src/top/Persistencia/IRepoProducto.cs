@@ -1,6 +1,6 @@
-namespace Topardex;
+namespace Topardex.top.Persistencia;
 
-public class Producto
+public class IRepoProducto
 {
     public ushort IdProducto { get; set; }
     public required string Nombre { get; set; }
@@ -8,7 +8,4 @@ public class Producto
     public ushort Stock { get; set; }
 
     public ushort IdMarca { get; set; }
-    public Marca Marca { get; set; }
-
-    public string? Descripcion { get; set; }
 }

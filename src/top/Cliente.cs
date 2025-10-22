@@ -1,10 +1,14 @@
 namespace Topardex;
+
 public class Cliente
 {
     public ushort IdCliente { get; set; }
-    public string Nombre { get; set; }
-    public string Apellido { get; set; }
-    public string Pais { get; set; }
+    public required string Nombre { get; set; }
+    public required string Apellido { get; set; }
+    public string Pais { get; set; } = "Argentina";
     public DateTime FechaDeNacimiento { get; set; }
-    public IEnumerable<Pedido> Pedidos { get; set; } = new List<Pedido>();
+
+    public List<Pedido> Pedidos { get; set; } = new();
+
+    public string NombreCompleto => $"{Nombre} {Apellido}";
 }
