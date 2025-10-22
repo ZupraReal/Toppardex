@@ -4,15 +4,13 @@ using Xunit;
 
 namespace Topardex.Ado.Dapper.Test;
 
-public class RepoMarcaTest
+public class RepoMarcaTest : TestBase
 {
-    private readonly string _connectionString = "Server=localhost;Database=TopardexDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
     [Fact]
     public void AltaYObtenerMarcas_OK()
     {
-        using var conexion = new SqlConnection(_connectionString);
-        var repo = new RepoMarca(conexion);
+        var repo = new RepoMarca(Conexion);
 
         var marca = new Marca { Nombre = "Nike" };
         repo.Alta(marca);

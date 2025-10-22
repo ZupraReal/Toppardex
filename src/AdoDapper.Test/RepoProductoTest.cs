@@ -4,15 +4,13 @@ using Xunit;
 
 namespace Topardex.Ado.Dapper.Test;
 
-public class TestRepoProducto
+public class TestRepoProducto : TestBase
 {
-    private readonly string _connectionString = "Server=localhost;Database=TopardexDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
     [Fact]
     public void AltaYObtenerProductos_OK()
     {
-        using var conexion = new SqlConnection(_connectionString);
-        var repo = new RepoProducto(conexion);
+        var repo = new RepoProducto(Conexion);
 
         var producto = new Producto
         {

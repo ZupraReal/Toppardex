@@ -12,12 +12,54 @@ BEGIN
 	values (xidProducto,xnombre,xtalla,xprecio,xstock);
 END $$
 
-
-
-DROP PROCEDURE IF EXISTS `AgrProducto` $$ 
-CREATE PROCEDURE AgrProducto(xidProducto smallint unsigned, xnombre varchar(45), xprecio decimal(10,0), xstock smallint unsigned)
+DELIMITER $$
+DROP PROCEDURE IF EXISTS AltaCliente $$
+CREATE PROCEDURE AltaCliente(
+    IN xnombre VARCHAR(50),
+    IN xapellido VARCHAR(50),
+    IN xpais VARCHAR(50),
+    IN xfecha DATE
+)
 BEGIN
-	insert into Productos (idProducto, nombre, precio, stock)
-    Values (xidProducto, xnombre, xprecio, xstock);
-END$$
+    INSERT INTO Cliente (Nombre, Apellido, Pais, FechaDeNacimiento)
+    VALUES (xnombre, xapellido, xpais, xfecha);
+END $$
 DELIMITER ;
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS AltaMarca $$
+CREATE PROCEDURE AltaMarca(
+    IN xnombre VARCHAR(50)
+)
+BEGIN
+    INSERT INTO Marca (Nombre)
+    VALUES (xnombre);
+END $$
+DELIMITER ;
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS AltaProducto $$
+CREATE PROCEDURE AltaProducto(
+    IN xnombre VARCHAR(50),
+    IN xprecio DECIMAL(10,2),
+    IN xstock SMALLINT UNSIGNED,
+    IN xidmarca SMALLINT UNSIGNED
+)
+BEGIN
+    INSERT INTO Producto (Nombre, Precio, Stock, IdMarca)
+    VALUES (xnombre, xprecio, xstock, xidmarca);
+END $$
+DELIMITER ;
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS AltaPedido $$
+CREATE PROCEDURE AltaPedido(
+    IN xidcliente SMALLINT UNSIGNED,
+    IN xfechaventa DATETIME
+)
+BEGIN
+    INSERT INTO Pedido (IdCliente, FechaVenta)
+    VALUES (xidcliente, xfechaventa);
+END $$
+DELIMITER ;
+

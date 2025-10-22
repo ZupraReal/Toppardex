@@ -6,7 +6,12 @@ namespace Topardex.Ado.Dapper;
 
 public class RepoProducto : RepoGenerico
 {
-    public RepoProducto(IDbConnection conexion) : base(conexion) { }
+        private readonly IDbConnection _connection;
+
+         public RepoProducto(IDbConnection connection) : base(connection)
+        {
+            _connection = connection;
+        }
 
     public void Alta(Producto producto)
     {

@@ -6,12 +6,17 @@ namespace Topardex.Ado.Dapper;
 
 public class RepoPedido : RepoGenerico  
 {
-    public RepoPedido(IDbConnection conexion) : base(conexion) { }
+        private readonly IDbConnection _connection;
 
-    public void Alta(IRepoPedido pedido)
+        public RepoPedido(IDbConnection connection) : base(connection)
+        {
+            _connection = connection;
+        }
+
+    public void Alta(Pedido pedido)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("@xidcliente", pedido.IdCliente);
+        parametros.Add("@xidPedido", pedido.IdPedido);
         parametros.Add("@xfechaventa", pedido.FechaVenta);
 
         Conexion.Execute("AltaPedido", parametros, commandType: CommandType.StoredProcedure);

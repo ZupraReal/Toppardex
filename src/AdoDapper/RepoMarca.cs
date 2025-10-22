@@ -6,7 +6,12 @@ namespace Topardex.Ado.Dapper;
 
 public class RepoMarca : RepoGenerico
 {
-    public RepoMarca(IDbConnection conexion) : base(conexion) { }
+        private readonly IDbConnection _connection;
+
+        public RepoMarca(IDbConnection connection) : base(connection)
+        {
+            _connection = connection;
+        }
 
     public void Alta(Marca marca)
     {

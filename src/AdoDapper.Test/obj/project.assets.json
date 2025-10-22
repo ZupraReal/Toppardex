@@ -859,10 +859,11 @@
           "build/netcoreapp3.1/Microsoft.TestPlatform.TestHost.props": {}
         }
       },
-      "MySqlConnector/2.3.7": {
+      "MySqlConnector/2.4.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.1"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
         },
         "compile": {
           "lib/net8.0/MySqlConnector.dll": {
@@ -2391,10 +2392,10 @@
         "microsoft.testplatform.testhost.nuspec"
       ]
     },
-    "MySqlConnector/2.3.7": {
-      "sha512": "YiVOxvJ+vAYW8NT9gHv8RxKCDFCSXAObF3z0Ou/8WRv8Lsn2QsxaPW5xEwPE+xCcAq6BGkrI8GTOC09Xg09blQ==",
+    "MySqlConnector/2.4.0": {
+      "sha512": "78M+gVOjbdZEDIyXQqcA7EYlCGS3tpbUELHvn6638A2w0pkPI625ixnzsa5staAd3N9/xFmPJtkKDYwsXpFi/w==",
       "type": "package",
-      "path": "mysqlconnector/2.3.7",
+      "path": "mysqlconnector/2.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2407,16 +2408,16 @@
         "lib/net48/MySqlConnector.xml",
         "lib/net6.0/MySqlConnector.dll",
         "lib/net6.0/MySqlConnector.xml",
-        "lib/net7.0/MySqlConnector.dll",
-        "lib/net7.0/MySqlConnector.xml",
         "lib/net8.0/MySqlConnector.dll",
         "lib/net8.0/MySqlConnector.xml",
+        "lib/net9.0/MySqlConnector.dll",
+        "lib/net9.0/MySqlConnector.xml",
         "lib/netstandard2.0/MySqlConnector.dll",
         "lib/netstandard2.0/MySqlConnector.xml",
         "lib/netstandard2.1/MySqlConnector.dll",
         "lib/netstandard2.1/MySqlConnector.xml",
         "logo.png",
-        "mysqlconnector.2.3.7.nupkg.sha512",
+        "mysqlconnector.2.4.0.nupkg.sha512",
         "mysqlconnector.nuspec"
       ]
     },
@@ -3000,10 +3001,11 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AdoDapper >= 1.0.0",
+      "Dapper >= 2.1.66",
       "Microsoft.Extensions.Configuration >= 8.0.0",
       "Microsoft.Extensions.Configuration.Json >= 8.0.0",
       "Microsoft.NET.Test.Sdk >= 17.6.0",
-      "MySqlConnector >= 2.3.7",
+      "MySqlConnector >= 2.4.0",
       "coverlet.collector >= 6.0.0",
       "top >= 1.0.0",
       "xunit >= 2.9.3",
@@ -3011,23 +3013,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lab15-PC01\\.nuget\\packages\\": {},
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\AdoDapper.Test\\AdoDapper.Test.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper.Test\\AdoDapper.Test.csproj",
       "projectName": "AdoDapper.Test",
-      "projectPath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\AdoDapper.Test\\AdoDapper.Test.csproj",
-      "packagesPath": "C:\\Users\\Lab15-PC01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\AdoDapper.Test\\obj\\",
+      "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper.Test\\AdoDapper.Test.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lab15-PC01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3036,18 +3038,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj": {
-              "projectPath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj"
+            "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj"
             },
-            "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj": {
-              "projectPath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj"
+            "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj"
             }
           }
         }
@@ -3062,12 +3063,16 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.1.66, )"
+          },
           "Microsoft.Extensions.Configuration": {
             "target": "Package",
             "version": "[8.0.0, )"
@@ -3082,7 +3087,7 @@
           },
           "MySqlConnector": {
             "target": "Package",
-            "version": "[2.3.7, )"
+            "version": "[2.4.0, )"
           },
           "coverlet.collector": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -3117,7 +3122,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
