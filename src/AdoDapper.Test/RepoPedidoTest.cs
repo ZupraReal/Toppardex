@@ -20,7 +20,7 @@ public class RepoPedidoTest : TestBase
             FechaVenta = DateTime.Now
         };
 
-        repo.Alta(pedido);
+        repo.AltaPedido(pedido);
 
         var pedidos = repo.Obtener().ToList();
 

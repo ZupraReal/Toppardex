@@ -58,7 +58,7 @@ CREATE PROCEDURE AltaPedido(
     IN xfechaventa DATETIME
 )
 BEGIN
-    INSERT INTO Pedido (IdCliente, FechaVenta)
+    INSERT INTO Pedido (idCliente, fechaVenta)
     VALUES (xidcliente, xfechaventa);
 END $$
 DELIMITER ;

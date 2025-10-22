@@ -13,13 +13,13 @@ public class RepoCliente : RepoGenerico
             _connection = connection;
         }
 
-    public void Alta(Cliente cliente)
+    public void Alta(Cliente Cliente)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("@xnombre", cliente.Nombre);
-        parametros.Add("@xapellido", cliente.Apellido);
-        parametros.Add("@xpais", cliente.Pais);
-        parametros.Add("@xfecha", cliente.FechaDeNacimiento);
+        parametros.Add("@xnombre", Cliente.Nombre);
+        parametros.Add("@xapellido", Cliente.Apellido);
+        parametros.Add("@xpais", Cliente.Pais);
+        parametros.Add("@xfecha", Cliente.FechaDeNacimiento);
 
         Conexion.Execute("AltaCliente", parametros, commandType: CommandType.StoredProcedure);
     }

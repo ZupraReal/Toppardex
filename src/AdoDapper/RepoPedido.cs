@@ -13,14 +13,15 @@ public class RepoPedido : RepoGenerico
             _connection = connection;
         }
 
-    public void Alta(Pedido pedido)
+    public void AltaPedido(Pedido pedido)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("@xidPedido", pedido.IdPedido);
-        parametros.Add("@xfechaventa", pedido.FechaVenta);
+        parametros.Add("xidcliente", pedido.idCliente);
+        parametros.Add("xfechaventa", pedido.FechaVenta);
 
         Conexion.Execute("AltaPedido", parametros, commandType: CommandType.StoredProcedure);
     }
+
 
     public IEnumerable<Pedido> Obtener()
     {

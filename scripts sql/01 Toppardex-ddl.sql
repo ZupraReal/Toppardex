@@ -16,8 +16,8 @@ CREATE SCHEMA IF NOT EXISTS `5to_Toppardex` ;
 USE `5to_Toppardex` ;
 
 
-CREATE TABLE Clientes (
-	idCliente smallint unsigned not null,
+CREATE TABLE Cliente (
+	idCliente smallint unsigned not null AUTO_INCREMENT,
 	nombre varchar(45) not null,
 	apellido varchar(45) not null,
     pais varchar(45) not null,
@@ -31,8 +31,8 @@ CREATE TABLE Marca (
 	primary key (idMarca)
 	);
 
-CREATE TABLE Productos (
-	idProducto smallint unsigned not null,
+CREATE TABLE Producto (
+	idProducto smallint unsigned not null AUTO_INCREMENT,
 	nombre varchar(45) not null,
 	precio decimal (10, 2) not null,
 	stock smallint unsigned not null,
@@ -41,20 +41,14 @@ CREATE TABLE Productos (
 	foreign key (idMarca) references Marca(idMarca) 
 );
 
-CREATE TABLE Pedidos (
-    idPedido smallint unsigned not null,
+CREATE TABLE Pedido (
+    idPedido smallint unsigned not null AUTO_INCREMENT,
 	idCliente smallint unsigned not null,
 	fechaVenta datetime not null,
 	primary key (idPedido),
 	foreign key (idCliente) references Clientes(idCliente)
 );
-CREATE TABLE Talle(
-	idProducto smallint unsigned not null,
-	numerotalle tinyint unsigned not null,
-	cantidadtalle smallint unsigned not null, 
-	primary key (idProducto, numerotalle),
-	foreign key (idProducto) references Productos(idProducto)
-); 
+
 
 CREATE TABLE ProductoPedidos (
     idPedido smallint unsigned not null,
@@ -64,5 +58,4 @@ CREATE TABLE ProductoPedidos (
 	numerotalle tinyint unsigned not null,
 	primary key (idPedido, idProducto, numerotalle),
 	foreign key (idPedido) references Pedidos(idPedido),
-	foreign key (idProducto, numerotalle) references Talle(idProducto, numerotalle)
 );
