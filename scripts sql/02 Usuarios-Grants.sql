@@ -1,4 +1,4 @@
-USE 5to_Toppardex
+USE 5to_Toppardex;
 
 CREATE USER IF NOT EXISTS 'Gerente'@'localhost' IDENTIFIED BY '1PassG!#%';
 CREATE USER IF NOT EXISTS 'Cajero'@'localhost' IDENTIFIED BY '1PassC!$%';

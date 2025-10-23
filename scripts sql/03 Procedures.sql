@@ -8,9 +8,10 @@ DROP PROCEDURE IF EXISTS `SumaStock` $$
 CREATE PROCEDURE SumaStock (xidProducto smallint unsigned,xnombre varchar(45),
 xtalla int unsigned, xprecio decimal,xstock smallint unsigned) 
 BEGIN
-	insert into Productos (idProducto,nombre,precio,stock)
+	insert into Producto (idProducto,nombre,precio,stock)
 	values (xidProducto,xnombre,xtalla,xprecio,xstock);
 END $$
+DELIMITER ; 
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS AltaCliente $$
@@ -60,20 +61,22 @@ CREATE PROCEDURE AltaPedido(
 BEGIN
     INSERT INTO Pedido (idCliente, fechaVenta)
     VALUES (xidcliente, xfechaventa);
+
+    SELECT LAST_INSERT_ID() AS idPedido;
 END $$
 DELIMITER ;
 
+DELIMITER $$
 DROP PROCEDURE IF EXISTS AltaCliente $$
-CREATE PROCEDURE AltaCliente(
-    IN xidCliente SMALLINT UNSIGNED,
+CREATE PROCEDURE AltaCliente(   
     IN xnombre VARCHAR(45),
     IN xapellido VARCHAR(45),
     IN xpais VARCHAR(45),
     IN xfecha DATE
 )
 BEGIN
-    INSERT INTO Clientes (idCliente, nombre, apellido, pais, fechaDeNacimiento)
-    VALUES (xidCliente, xnombre, xapellido, xpais, xfecha);
+    INSERT INTO Cliente (nombre, apellido, pais, fechaDeNacimiento)
+    VALUES (xnombre, xapellido, xpais, xfecha);
 END $$
 
 

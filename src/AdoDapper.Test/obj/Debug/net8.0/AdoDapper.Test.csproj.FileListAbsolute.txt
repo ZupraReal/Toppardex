@@ -433,3 +433,4 @@ C:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\src\AdoDapper.Test\obj\D
 C:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\src\AdoDapper.Test\obj\Debug\net8.0\AdoDapper.Test.genruntimeconfig.cache
 C:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\src\AdoDapper.Test\obj\Debug\net8.0\ref\AdoDapper.Test.dll
 C:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\src\AdoDapper.Test\bin\Debug\net8.0\appSettings.json
+C:\Users\Lab15-PC01\Documents\GitHub\Toppardex\src\AdoDapper.Test\bin\Debug\net8.0\appSettings.json

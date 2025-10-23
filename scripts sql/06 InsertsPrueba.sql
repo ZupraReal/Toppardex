@@ -2,7 +2,7 @@
 -- DATOS INICIALES
 -- =======================================================
 
-USE 5to_Toppardex
+USE 5to_Toppardex;
 SELECT 'Insertando datos iniciales' AS 'Estado';
 
 INSERT INTO Marca (nombre) VALUES
@@ -17,5 +17,5 @@ INSERT INTO Marca (nombre) VALUES
 ('Incel');
 
 CALL AltaCliente('Judas', 'Pin', 'Argentina', '2007-03-15');
-CALL AltaCliente( 'Facundo', 'Perez', 'Argentina', '2006-09-02');
+CALL AltaCliente('Facundo', 'Perez', 'Argentina', '2006-09-02');
 
