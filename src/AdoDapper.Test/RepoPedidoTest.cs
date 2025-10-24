@@ -34,12 +34,11 @@ public class RepoPedidoTest : TestBase
                 new { Pedido = idPedidoInsertado, Prod = 2, Precio = 200m, Cant = 1 }
             });
 
-        // Esperar un pequeño momento a que el trigger actualice el total (por seguridad)
+       
         System.Threading.Thread.Sleep(500); // 100 ms
 
-        // Reconsultar el pedido desde la base
 
-// leer la conexión desde el appSettings.json
+
         var config = new ConfigurationBuilder()
             .SetBasePath(AppContext.BaseDirectory)
             .AddJsonFile("appSettings.json", optional: false, reloadOnChange: true)
