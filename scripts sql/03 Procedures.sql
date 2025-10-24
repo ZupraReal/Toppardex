@@ -57,10 +57,11 @@ DROP PROCEDURE IF EXISTS AltaPedido $$
 CREATE PROCEDURE AltaPedido(
     IN xidcliente SMALLINT UNSIGNED,
     IN xfechaventa DATETIME
+
 )
 BEGIN
-    INSERT INTO Pedido (idCliente, fechaVenta)
-    VALUES (xidcliente, xfechaventa);
+    INSERT INTO Pedido (idCliente, fechaVenta, total)
+    VALUES (xidcliente, xfechaventa, 0.00);
 
     SELECT LAST_INSERT_ID() AS idPedido;
 END $$

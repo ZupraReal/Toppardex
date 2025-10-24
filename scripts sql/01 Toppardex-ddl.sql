@@ -45,6 +45,7 @@ CREATE TABLE Pedido (
     idPedido smallint unsigned not null AUTO_INCREMENT,
 	idCliente smallint unsigned not null,
 	fechaVenta datetime not null,
+	total decimal (10, 2) not null,
 	primary key (idPedido),
 	foreign key (idCliente) references Cliente(idCliente)
 );
@@ -55,7 +56,6 @@ CREATE TABLE ProductoPedidos (
 	idProducto smallint unsigned not null,
 	precio decimal (10, 2) not null,
 	cantidad smallint unsigned not null,
-	numerotalle tinyint unsigned not null,
-	primary key (idPedido, idProducto, numerotalle),
+	primary key (idPedido, idProducto),
 	foreign key (idPedido) references Pedido(idPedido)
 );

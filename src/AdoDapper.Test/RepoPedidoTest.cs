@@ -12,55 +12,42 @@ namespace Topardex.AdoDapper.Test;
 
 public class RepoPedidoTest : TestBase
 {
-            [Fact]
-        public void AltaPedido_DeberiaInsertarPedido_CuandoLosDatosSonValidos()
-        {
-            // Arrange: Aseguramos que exista un cliente de prueba
-            var clienteExistente = Conexion.QueryFirstOrDefault<int>(
-                "SELECT idCliente FROM Cliente WHERE idCliente = @IdCliente",
-                new { IdCliente = 1 });
+    [Fact]
+    public void AltaPedido_DeberiaInsertarPedidoYActualizarTotal()
+    {
+        // Act
+        var parametros = new DynamicParameters();
+        parametros.Add("xidcliente", 1);
+        parametros.Add("xfechaventa", DateTime.Now);
 
-            if (clienteExistente == 0)
+        int idPedidoInsertado = Conexion.ExecuteScalar<int>(
+            "AltaPedido",
+            parametros,
+            commandType: CommandType.StoredProcedure);
+
+        // Insertar productos
+        Conexion.Execute(
+            "INSERT INTO ProductoPedidos (idPedido, idProducto, precio, cantidad) VALUES (@Pedido, @Prod, @Precio, @Cant)",
+            new[]
             {
-                Conexion.Execute(
-                    "INSERT INTO Cliente (idCliente, nombre, apellido, pais, fechaDeNacimiento) VALUES (@IdCliente, @Nombre, @Apellido, @Pais, @FechaNac)",
-                    new
-                    {
-                        IdCliente = 1,
-                        Nombre = "Cliente",
-                        Apellido = "Prueba",
-                        Pais = "Argentina",
-                        FechaNac = new DateTime(1990, 1, 1)
-                    });
-            }
+                new { Pedido = idPedidoInsertado, Prod = 1, Precio = 100m, Cant = 2 },
+                new { Pedido = idPedidoInsertado, Prod = 2, Precio = 200m, Cant = 1 }
+            });
 
-            // Creamos un pedido nuevo
-            var pedido = new Pedido
-            {
-                idCliente = 1,
-                FechaVenta = DateTime.Now
-            };
+        // Esperar un pequeño momento a que el trigger actualice el total (por seguridad)
+        System.Threading.Thread.Sleep(500); // 100 ms
 
-            // Act: Llamamos al procedimiento AltaPedido
-            var parametros = new DynamicParameters();
-            parametros.Add("xidcliente", pedido.idCliente);
-            parametros.Add("xfechaventa", pedido.FechaVenta);
+        // Reconsultar el pedido desde la base
+        var pedidoDb = Conexion.QuerySingleOrDefault<Pedido>(
+            "SELECT idPedido, idCliente, fechaVenta, total FROM Pedido WHERE idPedido = @IdPedido",
+            new { IdPedido = idPedidoInsertado });
 
-            int idPedidoInsertado = Conexion.ExecuteScalar<int>(
-                "AltaPedido",
-                parametros,
-                commandType: CommandType.StoredProcedure);
+        // Assert
+        var totalEsperado = (100m * 2) + (200m * 1);
+        Assert.NotNull(pedidoDb);
+        Assert.Equal(1, pedidoDb.idCliente);
+        Assert.Equal(totalEsperado, pedidoDb.Total);
+    }
 
-            // Assert: Comprobamos que se haya insertado correctamente
-            Assert.True(idPedidoInsertado > 0, "No se insertó el pedido correctamente.");
 
-            var pedidoDb = Conexion.QuerySingleOrDefault<Pedido>(
-                "SELECT idPedido, idCliente, fechaVenta FROM Pedido WHERE idPedido = @IdPedido",
-                new { IdPedido = idPedidoInsertado });
-
-            Assert.NotNull(pedidoDb);
-            Assert.Equal(pedido.idCliente, pedidoDb.idCliente);
-            Assert.Equal(pedido.FechaVenta.ToString("yyyy-MM-dd"), pedidoDb.FechaVenta.ToString("yyyy-MM-dd"));
-        }
-    
 }
