@@ -11,6 +11,6 @@ public class Pedido
 
     public List<ProductoPedido> Productos { get; set; } = new();
 
-    public decimal Total => Productos.Sum(p => p.Subtotal);
+    public decimal Total { get; set; } 
     public string Estado { get; set; } = "Pendiente";
 }

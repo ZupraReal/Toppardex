@@ -1,11 +1,11 @@
-using Microsoft.Data.SqlClient;
-using Topardex.Ado.Dapper;
-using Topardex.Ado.Dapper.Test;
-using Topardex.top.Persistencia;
-using Xunit;
 using Dapper;
+using Xunit;
 using System;
 using System.Data;
+using MySqlConnector; 
+using Topardex.top.Persistencia;
+using Topardex.Ado.Dapper.Test;
+using Microsoft.Extensions.Configuration;
 
 
 namespace Topardex.AdoDapper.Test;
@@ -38,16 +38,31 @@ public class RepoPedidoTest : TestBase
         System.Threading.Thread.Sleep(500); // 100 ms
 
         // Reconsultar el pedido desde la base
-        var pedidoDb = Conexion.QuerySingleOrDefault<Pedido>(
-            "SELECT idPedido, idCliente, fechaVenta, total FROM Pedido WHERE idPedido = @IdPedido",
-            new { IdPedido = idPedidoInsertado });
 
-        // Assert
-        var totalEsperado = (100m * 2) + (200m * 1);
-        Assert.NotNull(pedidoDb);
-        Assert.Equal(1, pedidoDb.idCliente);
-        Assert.Equal(totalEsperado, pedidoDb.Total);
+// leer la conexión desde el appSettings.json
+        var config = new ConfigurationBuilder()
+            .SetBasePath(AppContext.BaseDirectory)
+            .AddJsonFile("appSettings.json", optional: false, reloadOnChange: true)
+            .Build();
+
+        var connectionString = config.GetConnectionString("MySQL");
+
+        using (var nuevaConexion = new MySqlConnection(connectionString))
+        {
+            var pedidoDb = nuevaConexion.QuerySingleOrDefault<Pedido>(
+                "SELECT idPedido, idCliente, fechaVenta, total FROM Pedido WHERE idPedido = @IdPedido",
+                new { IdPedido = idPedidoInsertado });
+
+            var totalEsperado = (100m * 2) + (200m * 1);
+
+            Console.WriteLine($"Total leído: {pedidoDb?.Total}");
+
+            Assert.NotNull(pedidoDb);
+            Assert.Equal(1, pedidoDb.idCliente);
+            Assert.Equal(totalEsperado, pedidoDb.Total);
+        }
+
+
     }
-
 
 }

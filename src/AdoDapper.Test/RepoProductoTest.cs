@@ -1,6 +1,6 @@
-using Microsoft.Data.SqlClient;
 using Topardex.top.Persistencia;
 using Xunit;
+using MySqlConnector;
 
 namespace Topardex.Ado.Dapper.Test;
 

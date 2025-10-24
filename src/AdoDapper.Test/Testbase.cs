@@ -11,10 +11,10 @@ public class TestBase
     public TestBase()
     {
         IConfiguration config = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddJsonFile("appSettings.json", optional: false, reloadOnChange: true)
             .Build();
 
-        string cadena = config.GetConnectionString("MySQL")!;
+        string cadena = config.GetConnectionString("MySQL")!;   
         Conexion = new MySqlConnection(cadena);
         Conexion.Open(); // 👈 abrimos la conexión acá
     }

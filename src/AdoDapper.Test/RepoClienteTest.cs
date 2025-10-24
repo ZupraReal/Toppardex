@@ -1,4 +1,4 @@
-using Microsoft.Data.SqlClient;
+using MySqlConnector;
 using Topardex.top.Persistencia;
 using Xunit;
 

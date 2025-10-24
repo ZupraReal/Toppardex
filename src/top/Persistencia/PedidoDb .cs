@@ -1,6 +1,6 @@
 namespace Topardex.top.Persistencia;
 
-public class IRepoPedido
+public class PedidoDb
 {
     public int IdPedido { get; set; }
     public int IdCliente { get; set; }
