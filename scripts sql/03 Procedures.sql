@@ -79,5 +79,19 @@ BEGIN
     INSERT INTO Cliente (nombre, apellido, pais, fechaDeNacimiento)
     VALUES (xnombre, xapellido, xpais, xfecha);
 END $$
+DELIMITER $$
+
+CREATE PROCEDURE AltaProductoPedido(
+    IN xidPedido INT,
+    IN xidProducto INT,
+    IN xcantidad INT,
+    IN xprecioUnitario DECIMAL(10,2)
+)
+BEGIN
+    INSERT INTO ProductoPedidos (idPedido, idProducto, cantidad, precio)
+    VALUES (xidPedido, xidProducto, xcantidad, xprecioUnitario);
+END $$
+
+DELIMITER ;
 
 
