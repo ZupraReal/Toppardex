@@ -6,27 +6,29 @@ namespace Topardex.Ado.Dapper;
 
 public class RepoMarca : RepoGenerico
 {
-        private readonly IDbConnection _connection;
+    private readonly IDbConnection _connection;
 
-        public RepoMarca(IDbConnection connection) : base(connection)
-        {
-            _connection = connection;
-        }
+    public RepoMarca(IDbConnection connection) : base(connection)
+    {
+        _connection = connection;
+    }
 
-    public void Alta(Marca marca)
+    public async Task AltaAsync(Marca marca)
     {
         var parametros = new DynamicParameters();
         parametros.Add("@xnombre", marca.Nombre);
-        Conexion.Execute("AltaMarca", parametros, commandType: CommandType.StoredProcedure);
+        await Conexion.ExecuteAsync("AltaMarca", parametros, commandType: CommandType.StoredProcedure);
     }
 
-    public IEnumerable<Marca> Obtener()
+    public async Task<IEnumerable<Marca>> ObtenerAsync()
     {
-        return Conexion.Query<Marca>("SELECT * FROM Marca");
+        return await Conexion.QueryAsync<Marca>("SELECT * FROM Marca");
     }
 
-    public Marca? Detalle(int id)
+    public async Task<Marca?> DetalleAsync(int id)
     {
-        return Conexion.QueryFirstOrDefault<Marca>("SELECT * FROM Marca WHERE IdMarca = @id", new { id });
+        return await Conexion.QueryFirstOrDefaultAsync<Marca>(
+            "SELECT * FROM Marca WHERE IdMarca = @id",
+            new { id });
     }
 }

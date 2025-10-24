@@ -6,14 +6,14 @@ namespace Topardex.Ado.Dapper;
 
 public class RepoProducto : RepoGenerico
 {
-        private readonly IDbConnection _connection;
+    private readonly IDbConnection _connection;
 
-         public RepoProducto(IDbConnection connection) : base(connection)
-        {
-            _connection = connection;
-        }
+    public RepoProducto(IDbConnection connection) : base(connection)
+    {
+        _connection = connection;
+    }
 
-    public void Alta(Producto producto)
+    public async Task AltaAsync(Producto producto)
     {
         var parametros = new DynamicParameters();
         parametros.Add("@xnombre", producto.Nombre);
@@ -21,26 +21,32 @@ public class RepoProducto : RepoGenerico
         parametros.Add("@xstock", producto.Stock);
         parametros.Add("@xidmarca", producto.IdMarca);
 
-        Conexion.Execute("AltaProducto", parametros, commandType: CommandType.StoredProcedure);
+        await Conexion.ExecuteAsync("AltaProducto", parametros, commandType: CommandType.StoredProcedure);
     }
 
-    public IEnumerable<Producto> Obtener()
+    public async Task<IEnumerable<Producto>> ObtenerAsync()
     {
-        return Conexion.Query<Producto>("SELECT * FROM Producto");
+        return await Conexion.QueryAsync<Producto>("SELECT * FROM Producto");
     }
 
-    public Producto? Detalle(int id)
+    public async Task<Producto?> DetalleAsync(int id)
     {
-        return Conexion.QueryFirstOrDefault<Producto>("SELECT * FROM Producto WHERE IdProducto = @id", new { id });
+        return await Conexion.QueryFirstOrDefaultAsync<Producto>(
+            "SELECT * FROM Producto WHERE IdProducto = @id",
+            new { id });
     }
 
-    public IEnumerable<Producto> ObtenerPorMarca(int idMarca)
+    public async Task<IEnumerable<Producto>> ObtenerPorMarcaAsync(int idMarca)
     {
-        return Conexion.Query<Producto>("SELECT * FROM Producto WHERE IdMarca = @idMarca", new { idMarca });
+        return await Conexion.QueryAsync<Producto>(
+            "SELECT * FROM Producto WHERE IdMarca = @idMarca",
+            new { idMarca });
     }
 
-        public IEnumerable<Producto> ObtenerPorPrecio(decimal precio)
+    public async Task<IEnumerable<Producto>> ObtenerPorPrecioAsync(decimal precio)
     {
-        return Conexion.Query<Producto>("SELECT * FROM Producto WHERE Precio = @Precio", new { precio });
+        return await Conexion.QueryAsync<Producto>(
+            "SELECT * FROM Producto WHERE Precio = @Precio",
+            new { precio });
     }
 }

@@ -1,32 +1,27 @@
 using Dapper;
 using Xunit;
-using System;
-using System.Data;
-using MySqlConnector; 
-using Topardex.top.Persistencia;
-using Topardex.Ado.Dapper.Test;
+using MySqlConnector;
 using Microsoft.Extensions.Configuration;
+using Topardex.top.Persistencia;
+using System.Data;
 
-
-namespace Topardex.AdoDapper.Test;
+namespace Topardex.Ado.Dapper.Test;
 
 public class RepoPedidoTest : TestBase
 {
     [Fact]
-    public void AltaPedido_DeberiaInsertarPedidoYActualizarTotal()
+    public async Task AltaPedido_DeberiaInsertarPedidoYActualizarTotal()
     {
-        // Act
         var parametros = new DynamicParameters();
         parametros.Add("xidcliente", 1);
         parametros.Add("xfechaventa", DateTime.Now);
 
-        int idPedidoInsertado = Conexion.ExecuteScalar<int>(
+        int idPedidoInsertado = await Conexion.ExecuteScalarAsync<int>(
             "AltaPedido",
             parametros,
             commandType: CommandType.StoredProcedure);
 
-        // Insertar productos
-        Conexion.Execute(
+        await Conexion.ExecuteAsync(
             "INSERT INTO ProductoPedidos (idPedido, idProducto, precio, cantidad) VALUES (@Pedido, @Prod, @Precio, @Cant)",
             new[]
             {
@@ -34,10 +29,7 @@ public class RepoPedidoTest : TestBase
                 new { Pedido = idPedidoInsertado, Prod = 2, Precio = 200m, Cant = 1 }
             });
 
-       
-        System.Threading.Thread.Sleep(500); // 100 ms
-
-
+        await Task.Delay(500); // Espera al trigger
 
         var config = new ConfigurationBuilder()
             .SetBasePath(AppContext.BaseDirectory)
@@ -46,22 +38,17 @@ public class RepoPedidoTest : TestBase
 
         var connectionString = config.GetConnectionString("MySQL");
 
-        using (var nuevaConexion = new MySqlConnection(connectionString))
-        {
-            var pedidoDb = nuevaConexion.QuerySingleOrDefault<Pedido>(
-                "SELECT idPedido, idCliente, fechaVenta, total FROM Pedido WHERE idPedido = @IdPedido",
-                new { IdPedido = idPedidoInsertado });
+        await using var nuevaConexion = new MySqlConnection(connectionString);
+        await nuevaConexion.OpenAsync();
 
-            var totalEsperado = (100m * 2) + (200m * 1);
+        var pedidoDb = await nuevaConexion.QuerySingleOrDefaultAsync<Pedido>(
+            "SELECT idPedido, idCliente, fechaVenta, total FROM Pedido WHERE idPedido = @IdPedido",
+            new { IdPedido = idPedidoInsertado });
 
-            Console.WriteLine($"Total leído: {pedidoDb?.Total}");
+        var totalEsperado = (100m * 2) + (200m * 1);
 
-            Assert.NotNull(pedidoDb);
-            Assert.Equal(1, pedidoDb.idCliente);
-            Assert.Equal(totalEsperado, pedidoDb.Total);
-        }
-
-
+        Assert.NotNull(pedidoDb);
+        Assert.Equal(1, pedidoDb.idCliente);
+        Assert.Equal(totalEsperado, pedidoDb.Total);
     }
-
 }

@@ -1,14 +1,12 @@
 using Topardex.top.Persistencia;
 using Xunit;
-using MySqlConnector;
 
 namespace Topardex.Ado.Dapper.Test;
 
 public class TestRepoProducto : TestBase
 {
-
     [Fact]
-    public void AltaYObtenerProductos_OK()
+    public async Task AltaYObtenerProductos_OK()
     {
         var repo = new RepoProducto(Conexion);
 
@@ -20,9 +18,9 @@ public class TestRepoProducto : TestBase
             IdMarca = 1
         };
 
-        repo.Alta(producto);
+        await repo.AltaAsync(producto);
 
-        var productos = repo.Obtener().ToList();
+        var productos = (await repo.ObtenerAsync()).ToList();
 
         Assert.Contains(productos, p => p.Nombre == "Air Max 90");
     }

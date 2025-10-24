@@ -9,28 +9,30 @@ public class RepoCliente : RepoGenerico
     private readonly IDbConnection _connection;
 
     public RepoCliente(IDbConnection connection) : base(connection)
-        {
-            _connection = connection;
-        }
+    {
+        _connection = connection;
+    }
 
-    public void Alta(Cliente Cliente)
+    public async Task AltaAsync(Cliente cliente)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("@xnombre", Cliente.Nombre);
-        parametros.Add("@xapellido", Cliente.Apellido);
-        parametros.Add("@xpais", Cliente.Pais);
-        parametros.Add("@xfecha", Cliente.FechaDeNacimiento);
+        parametros.Add("@xnombre", cliente.Nombre);
+        parametros.Add("@xapellido", cliente.Apellido);
+        parametros.Add("@xpais", cliente.Pais);
+        parametros.Add("@xfecha", cliente.FechaDeNacimiento);
 
-        Conexion.Execute("AltaCliente", parametros, commandType: CommandType.StoredProcedure);
+        await Conexion.ExecuteAsync("AltaCliente", parametros, commandType: CommandType.StoredProcedure);
     }
 
-    public IEnumerable<Cliente> Obtener()
+    public async Task<IEnumerable<Cliente>> ObtenerAsync()
     {
-        return Conexion.Query<Cliente>("SELECT * FROM Cliente");
+        return await Conexion.QueryAsync<Cliente>("SELECT * FROM Cliente");
     }
 
-    public Cliente? Detalle(int id)
+    public async Task<Cliente?> DetalleAsync(int id)
     {
-        return Conexion.QueryFirstOrDefault<Cliente>("SELECT * FROM Cliente WHERE IdCliente = @id", new { id });
+        return await Conexion.QueryFirstOrDefaultAsync<Cliente>(
+            "SELECT * FROM Cliente WHERE IdCliente = @id",
+            new { id });
     }
 }

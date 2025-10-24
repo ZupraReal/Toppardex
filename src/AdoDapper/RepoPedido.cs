@@ -6,20 +6,20 @@ namespace Topardex.Ado.Dapper;
 
 public class RepoPedido : RepoGenerico  
 {
-        private readonly IDbConnection _connection;
+    private readonly IDbConnection _connection;
 
-        public RepoPedido(IDbConnection connection) : base(connection)
-        {
-            _connection = connection;
-        }
+    public RepoPedido(IDbConnection connection) : base(connection)
+    {
+        _connection = connection;
+    }
 
-    public int AltaPedido(Pedido pedido)
+    public async Task<int> AltaPedidoAsync(Pedido pedido)
     {
         var parametros = new DynamicParameters();
         parametros.Add("xidcliente", pedido.idCliente);
         parametros.Add("xfechaventa", pedido.FechaVenta);
 
-        int idPedidoInsertado = Conexion.ExecuteScalar<int>(
+        int idPedidoInsertado = await Conexion.ExecuteScalarAsync<int>(
             "AltaPedido",
             parametros,
             commandType: CommandType.StoredProcedure);
@@ -27,15 +27,15 @@ public class RepoPedido : RepoGenerico
         return idPedidoInsertado;
     }
 
-
-
-    public IEnumerable<Pedido> Obtener()
+    public async Task<IEnumerable<Pedido>> ObtenerAsync()
     {
-        return Conexion.Query<Pedido>("SELECT * FROM Pedido");
+        return await Conexion.QueryAsync<Pedido>("SELECT * FROM Pedido");
     }
 
-    public Pedido? Detalle(int id)
+    public async Task<Pedido?> DetalleAsync(int id)
     {
-        return Conexion.QueryFirstOrDefault<Pedido>("SELECT * FROM Pedido WHERE IdPedido = @id", new { id });
+        return await Conexion.QueryFirstOrDefaultAsync<Pedido>(
+            "SELECT * FROM Pedido WHERE IdPedido = @id",
+            new { id });
     }
 }
