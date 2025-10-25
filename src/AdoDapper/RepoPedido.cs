@@ -16,7 +16,7 @@ public class RepoPedido : RepoGenerico
     public async Task<Pedido> AltaPedidoAsync(Pedido pedido)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("xidcliente", pedido.idCliente);
+        parametros.Add("xidcliente", pedido.IdCliente);
         parametros.Add("xfechaventa", DateTime.Now);
 
         int idPedidoInsertado = await Conexion.ExecuteScalarAsync<int>(
@@ -62,15 +62,57 @@ public class RepoPedido : RepoGenerico
 
 
 
-    public async Task<IEnumerable<Pedido>> ObtenerAsync()
+  public async Task<IEnumerable<Pedido>> ObtenerAsync()
     {
-        return await Conexion.QueryAsync<Pedido>("SELECT * FROM Pedido");
+        var pedidos = await Conexion.QueryAsync<Pedido>(
+            "SELECT idPedido AS IdPedido, idCliente AS IdCliente, fechaVenta AS FechaVenta, total AS Total FROM Pedido"
+        );
+
+        foreach (var pedido in pedidos)
+        {
+            var productos = await Conexion.QueryAsync<ProductoPedido>(
+                @"SELECT 
+                    pp.idProducto AS IdProducto,
+                    p.nombre AS Nombre,
+                    pp.cantidad AS Cantidad,
+                    pp.precio AS PrecioUnitario
+                FROM ProductoPedidos pp
+                INNER JOIN Producto p ON p.idProducto = pp.idProducto
+                WHERE pp.idPedido = @idPedido",
+                new { idPedido = pedido.IdPedido }
+            );
+
+            pedido.Productos = productos.ToList();
+        }
+
+        return pedidos;
     }
 
-    public async Task<Pedido?> DetalleAsync(int id)
+
+    public async Task<Pedido?> DetalleAsync(int idPedido)
     {
-        return await Conexion.QueryFirstOrDefaultAsync<Pedido>(
-            "SELECT * FROM Pedido WHERE IdPedido = @id",
-            new { id });
+        var pedido = await Conexion.QuerySingleOrDefaultAsync<Pedido>(
+            "SELECT idPedido AS IdPedido, idCliente AS IdCliente, fechaVenta AS FechaVenta, total AS Total FROM Pedido WHERE idPedido = @idPedido",
+            new { idPedido }
+        );
+
+        if (pedido == null)
+            return null;
+
+        var productos = await Conexion.QueryAsync<ProductoPedido>(
+            @"SELECT 
+                pp.idProducto AS IdProducto,
+                p.nombre AS Nombre,
+                pp.cantidad AS Cantidad,
+                pp.precio AS PrecioUnitario
+            FROM ProductoPedidos pp
+            INNER JOIN Producto p ON p.idProducto = pp.idProducto
+            WHERE pp.idPedido = @idPedido",
+            new { idPedido }
+        );
+
+        pedido.Productos = productos.ToList();
+
+        return pedido;
     }
 }

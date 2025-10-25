@@ -7,7 +7,7 @@ public class Pedido
    [JsonIgnore]
     public int IdPedido { get; set; }
 
-    public int idCliente { get; set; }
+    public int IdCliente { get; set; }
 
    [JsonIgnore]
     public DateTime? FechaVenta { get; set; } = DateTime.Now;
