@@ -1,0 +1,58 @@
+@using Topardex
+@model Producto
+
+@{
+    ViewData["Title"] = "Nuevo Producto";
+}
+
+<div class="container mt-4">
+    <h2>Agregar Producto</h2>
+
+    <form asp-action="Crear" method="post" class="mt-3 shadow-sm p-4 bg-light rounded" id="formProducto">
+        <div class="mb-3">
+            <label for="Nombre" class="form-label">Nombre</label>
+            <input asp-for="Nombre" class="form-control" required />
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Precio" class="form-label">Precio</label>
+            <input asp-for="Precio" class="form-control" type="number" step="0.01" required />
+            <span asp-validation-for="Precio" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Stock" class="form-label">Stock</label>
+            <input asp-for="Stock" class="form-control" type="number" required />
+            <span asp-validation-for="Stock" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="IdMarca" class="form-label">ID Marca</label>
+            <input asp-for="IdMarca" class="form-control" type="number" required />
+            <span asp-validation-for="IdMarca" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-save"></i> Guardar
+        </button>
+        <a href="/Producto" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Cancelar
+        </a>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('formProducto').addEventListener('submit', (e) => {
+            const nombre = document.getElementById('Nombre').value.trim();
+            const precio = parseFloat(document.getElementById('Precio').value);
+            const stock = parseInt(document.getElementById('Stock').value);
+
+            if (nombre.length < 2 || precio <= 0 || stock < 0) {
+                e.preventDefault();
+                alert("⚠️ Verifique los datos ingresados.");
+            }
+        });
+    </script>
+}

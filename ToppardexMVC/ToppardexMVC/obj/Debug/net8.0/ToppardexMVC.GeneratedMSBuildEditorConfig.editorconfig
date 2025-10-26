@@ -9,14 +9,34 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ToppardexMVC
 build_property.RootNamespace = ToppardexMVC
-build_property.ProjectDir = C:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC\
+build_property.ProjectDir = c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC
+build_property.MSBuildProjectDirectory = c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxjcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxkZXRhbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/AcercaDe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2VyY2FEZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Contacto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
@@ -24,6 +44,30 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXGNyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXGRldGFsbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ3JlYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cZGV0YWxsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9caW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Shared/Error.cshtml]

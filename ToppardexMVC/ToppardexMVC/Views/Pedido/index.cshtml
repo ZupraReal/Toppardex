@@ -1,0 +1,39 @@
+@using Topardex
+@model IEnumerable<Topardex.Pedido>
+
+@{
+    ViewData["Title"] = "Pedidos";
+}
+
+<h1 class="mb-4">Listado de Pedidos</h1>
+
+<a class="btn btn-success mb-3" href="/Pedido/Crear">+ Nuevo Pedido</a>
+
+<table class="table table-striped table-bordered text-center align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var pedido in Model)
+            {
+                <tr>
+                    <td>@pedido.IdPedido</td>
+                    <td>@pedido.IdCliente</td>
+                    <td>@(pedido.FechaVenta.HasValue ? pedido.FechaVenta.Value.ToString("dd/MM/yyyy") : "-")</td>
+                    <td>$@pedido.Total</td>
+                    <td>
+                        <a href="/Pedido/Detalle/@pedido.IdPedido" class="btn btn-primary btn-sm">Ver</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

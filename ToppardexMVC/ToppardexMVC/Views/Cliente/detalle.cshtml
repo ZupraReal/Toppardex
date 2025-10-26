@@ -1,0 +1,14 @@
+@using Topardex
+@model Cliente
+@{
+    ViewData["Title"] = "Detalle Cliente";
+}
+<h2>Detalle del Cliente</h2>
+<ul class="list-group">
+    <li class="list-group-item"><strong>ID:</strong> @Model.IdCliente</li>
+    <li class="list-group-item"><strong>Nombre:</strong> @Model.Nombre</li>
+    <li class="list-group-item"><strong>Apellido:</strong> @Model.Apellido</li>
+    <li class="list-group-item"><strong>País:</strong> @Model.Pais</li>
+    <li class="list-group-item"><strong>Fecha de Nacimiento:</strong> @Model.FechaDeNacimiento.ToShortDateString()</li>
+</ul>
+<a href="/Cliente" class="btn btn-secondary mt-3">Volver</a>

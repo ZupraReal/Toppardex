@@ -1719,11 +1719,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\ToppardexMVC\\ToppardexMVC\\ToppardexMVC.csproj",
+      "projectUniqueName": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\ToppardexMVC\\ToppardexMVC\\ToppardexMVC.csproj",
       "projectName": "ToppardexMVC",
-      "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\ToppardexMVC\\ToppardexMVC\\ToppardexMVC.csproj",
+      "projectPath": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\ToppardexMVC\\ToppardexMVC\\ToppardexMVC.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\ToppardexMVC\\ToppardexMVC\\obj\\",
+      "outputPath": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\ToppardexMVC\\ToppardexMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1744,11 +1744,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj"
+            "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj": {
+              "projectPath": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj"
             },
-            "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj"
+            "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj": {
+              "projectPath": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj"
             }
           }
         }

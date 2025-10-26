@@ -1,0 +1,41 @@
+@using Topardex
+@model Topardex.Pedido
+
+@{
+    ViewData["Title"] = "Detalle del Pedido";
+}
+
+<h1 class="mb-4">Detalle del Pedido</h1>
+
+<div class="card shadow">
+    <div class="card-body">
+        <p><strong>ID:</strong> @Model.IdPedido</p>
+        <p><strong>Cliente:</strong> @Model.IdCliente</p>
+        <p><strong>Fecha:</strong> @(Model.FechaVenta.HasValue ? Model.FechaVenta.Value.ToString("dd/MM/yyyy HH:mm") : "-")</p>
+        <p><strong>Total:</strong> $@Model.Total</p>
+
+        @if (Model.Productos != null && Model.Productos.Any())
+        {
+            <hr />
+            <h5>Productos</h5>
+            <table class="table">
+                <thead>
+                    <tr><th>Producto</th><th>Cantidad</th><th>Precio unit.</th><th>Subtotal</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var it in Model.Productos)
+                    {
+                        <tr>
+                            <td>@it.IdProducto</td>
+                            <td>@it.Cantidad</td>
+                            <td>$@it.PrecioUnitario</td>
+                            <td>$@(it.Cantidad * it.PrecioUnitario)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+<a href="/Pedido" class="btn btn-secondary mt-3">← Volver</a>

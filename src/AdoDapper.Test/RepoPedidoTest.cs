@@ -48,7 +48,7 @@ public class RepoPedidoTest : TestBase
         var totalEsperado = (100m * 2) + (200m * 1);
 
         Assert.NotNull(pedidoDb);
-        Assert.Equal(1, pedidoDb.idCliente);
+        Assert.Equal(1, pedidoDb.IdCliente);
         Assert.Equal(totalEsperado, pedidoDb.Total);
     }
 }

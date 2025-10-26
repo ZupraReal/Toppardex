@@ -1,0 +1,25 @@
+@using Topardex
+@model Cliente
+@{
+    ViewData["Title"] = "Crear Cliente";
+}
+<h2>Nuevo Cliente</h2>
+<form asp-action="Crear" method="post">
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Apellido</label>
+        <input asp-for="Apellido" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">País</label>
+        <input asp-for="Pais" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Fecha de Nacimiento</label>
+        <input asp-for="FechaDeNacimiento" type="date" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+</form>

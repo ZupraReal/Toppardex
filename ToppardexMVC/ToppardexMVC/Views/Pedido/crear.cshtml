@@ -1,0 +1,40 @@
+@using Topardex
+@model Topardex.Pedido
+
+@{
+    ViewData["Title"] = "Nuevo Pedido";
+}
+
+<h1 class="mb-4">Nuevo Pedido</h1>
+
+<form asp-action="Crear" method="post" class="card p-4 shadow-sm" id="formPedido">
+    <div class="mb-3">
+        <label class="form-label">ID Cliente</label>
+        <input asp-for="IdCliente" class="form-control" required />
+        <span asp-validation-for="IdCliente" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Fecha</label>
+        <input asp-for="FechaVenta" type="datetime-local" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+        <span asp-validation-for="FechaVenta" class="text-danger"></span>
+    </div>
+
+    <!-- Si querés crear el pedido con productos en el formulario, habría que añadir controls JS para agregarlos.
+         Por ahora asuma que el pedido se crea vacío y luego se le agregan productos desde otra pantalla. -->
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="/Pedido" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('formPedido').addEventListener('submit', function (e) {
+            const idCliente = document.querySelector('[name="IdCliente"]').value;
+            if (!idCliente || isNaN(Number(idCliente)) || Number(idCliente) <= 0) {
+                e.preventDefault();
+                alert('Ingresá un IdCliente válido.');
+            }
+        });
+    </script>
+}

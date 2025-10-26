@@ -1,0 +1,23 @@
+@using Topardex
+@model Producto
+
+@{
+    ViewData["Title"] = "Detalle del Producto";
+}
+
+<div class="container mt-4">
+    <h2>Detalle del Producto</h2>
+    <div class="card mt-3 shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Nombre</h5>
+            <p class="card-text"><strong>ID:</strong> @Model.IdProducto</p>
+            <p class="card-text"><strong>Precio:</strong> $@Model.Precio</p>
+            <p class="card-text"><strong>Stock:</strong> @Model.Stock</p>
+            <p class="card-text"><strong>Marca:</strong> @Model.IdMarca</p>
+
+            <a href="/Producto" class="btn btn-secondary mt-2">
+                <i class="bi bi-arrow-left"></i> Volver
+            </a>
+        </div>
+    </div>
+</div>
