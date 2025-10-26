@@ -83,9 +83,9 @@ namespace Topardex.top.Controllers
         // POST: /Marca/EliminarConfirmado
         [HttpPost, ActionName("EliminarConfirmado")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EliminarConfirmado(int id)
+        public async Task<IActionResult> EliminarConfirmado(int idMarca)
         {
-            await _repoMarca.EliminarMarcaAsync(id);
+            await _repoMarca.EliminarMarcaAsync(idMarca);
             return RedirectToAction(nameof(Index));
         }
     }
