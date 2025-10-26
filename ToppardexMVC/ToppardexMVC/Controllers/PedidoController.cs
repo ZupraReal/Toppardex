@@ -84,6 +84,28 @@ namespace Topardex.top.Controllers
             return View("ResultadoBusqueda", pedidos);
         }
 
+        // GET: /Pedido/BuscarPorId
+        public IActionResult BuscarPorId()
+        {
+            return View();
+        }
+
+        // POST: /Pedido/BuscarPorId
+        [HttpPost]
+        public async Task<IActionResult> BuscarPorId(int idPedido)
+        {
+            var pedido = await _repoPedido.DetalleAsync(idPedido);
+
+            if (pedido == null)
+            {
+                ViewBag.Mensaje = "No se encontró ningún pedido con ese ID.";
+                return View();
+            }
+
+            // Reutilizamos la vista Detalle
+            return View("Detalle", pedido);
+        }
+
 
     }
 }
