@@ -64,5 +64,26 @@ namespace Topardex.top.Controllers
             return RedirectToAction(nameof(Detalle), new { id = pedidoCreado.IdPedido });
         }
 
+        // GET: /Pedido/Buscar
+        public IActionResult Buscar()
+        {
+            return View();
+        }
+
+        // POST: /Pedido/Buscar
+        [HttpPost]
+        public async Task<IActionResult> Buscar(int idCliente)
+        {
+            var pedidos = await _repoPedido.ObtenerPorClienteAsync(idCliente);
+
+            if (!pedidos.Any())
+            {
+                ViewBag.Mensaje = "No se encontraron pedidos para este cliente.";
+            }
+
+            return View("ResultadoBusqueda", pedidos);
+        }
+
+
     }
 }

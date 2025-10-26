@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Buscar Pedido por Cliente";
+}
+
+<h2>Buscar Pedido por Cliente</h2>
+
+<form asp-action="Buscar" method="post">
+    <div class="mb-3">
+        <label>ID del Cliente:</label>
+        <input type="number" name="idCliente" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-warning mt-3">@ViewBag.Mensaje</div>
+}

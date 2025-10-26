@@ -9,6 +9,8 @@ namespace Topardex.top.Persistencia
         Task<Pedido> AltaPedidoAsync(Pedido pedido);
         Task<IEnumerable<Pedido>> ObtenerAsync();
         Task<Pedido?> DetalleAsync(int idPedido);
+
+        Task<IEnumerable<Pedido>> ObtenerPorClienteAsync(int idCliente);
     }
 }
 

@@ -1,0 +1,38 @@
+@model IEnumerable<Topardex.Pedido>
+
+@{
+    ViewData["Title"] = "Resultados de búsqueda";
+}
+
+<h2>Pedidos del cliente</h2>
+
+@if (!Model.Any())
+{
+    <p>No se encontraron pedidos.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID Pedido</th>
+                <th>Fecha</th>
+                <th>Total</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var pedido in Model)
+        {
+            <tr>
+                <td>@pedido.IdPedido</td>
+                <td>@pedido.FechaVenta?.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>$@pedido.Total</td>
+                <td>
+                    <a asp-action="Detalle" asp-route-id="@pedido.IdPedido" class="btn btn-info btn-sm">Ver Detalle</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

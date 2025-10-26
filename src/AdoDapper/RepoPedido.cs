@@ -129,5 +129,19 @@ public class RepoPedido : RepoGenerico, IRepoPedido
         return pedido;
     }
 
+    public async Task<IEnumerable<Pedido>> ObtenerPorClienteAsync(int idCliente)
+    {
+    var sql = @"
+        SELECT idPedido AS IdPedido, 
+               idCliente AS IdCliente, 
+               fechaVenta AS FechaVenta, 
+               total AS Total
+        FROM Pedido
+        WHERE idCliente = @idCliente
+        ORDER BY fechaVenta DESC";
+
+    return await Conexion.QueryAsync<Pedido>(sql, new { idCliente });
+}
+
 
 }
