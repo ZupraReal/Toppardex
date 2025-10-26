@@ -15,49 +15,87 @@ public class RepoPedido : RepoGenerico, IRepoPedido
 
     public async Task<Pedido> AltaPedidoAsync(Pedido pedido)
     {
-        var parametros = new DynamicParameters();
-        parametros.Add("xidcliente", pedido.IdCliente);
-        parametros.Add("xfechaventa", DateTime.Now);
-
-        int idPedidoInsertado = await Conexion.QuerySingleAsync<int>(
-            "AltaPedido",
-            parametros,
-            commandType: CommandType.StoredProcedure
-        );
-
-        foreach (var item in pedido.Productos)
+        using var tran = Conexion.BeginTransaction();
+        try
         {
-            var param = new DynamicParameters();
-            param.Add("xidpedido", idPedidoInsertado);
-            param.Add("xidproducto", item.IdProducto);
-            param.Add("xcantidad", item.Cantidad);
-            param.Add("xpreciounitario", item.PrecioUnitario);
-            await Conexion.ExecuteAsync("AltaProductoPedido", param, commandType: CommandType.StoredProcedure);
+            var parametros = new DynamicParameters();
+            parametros.Add("xidcliente", pedido.IdCliente);
+            parametros.Add("xfechaventa", DateTime.Now);
+            parametros.Add("xidPedido", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+            // Ejecuta el SP que tiene OUT xidPedido
+            await Conexion.ExecuteAsync(
+                "AltaPedido",
+                parametros,
+                commandType: CommandType.StoredProcedure,
+                transaction: tran
+            );
+
+            // Debug: verificar valor del parámetro de salida
+            var idPedidoInsertado = parametros.Get<int>("xidPedido");
+            Console.WriteLine($"DEBUG: idPedidoInsertado = {idPedidoInsertado}");
+
+            if (idPedidoInsertado <= 0)
+                throw new Exception("No se obtuvo idPedido desde el stored procedure.");
+
+            decimal total = 0;
+
+            // Insertar los productos del pedido usando la misma transacción
+            foreach (var item in pedido.Productos)
+            {
+                var param = new DynamicParameters();
+                param.Add("xidPedido", idPedidoInsertado);
+                param.Add("xidProducto", item.IdProducto);
+                param.Add("xcantidad", item.Cantidad);
+                param.Add("xprecioUnitario", item.PrecioUnitario);
+
+                await Conexion.ExecuteAsync(
+                    "AltaProductoPedido",
+                    param,
+                    commandType: CommandType.StoredProcedure,
+                    transaction: tran
+                );
+
+                total += item.Cantidad * item.PrecioUnitario;
+            }
+
+            // Actualizar total
+            await Conexion.ExecuteAsync(
+                "UPDATE Pedido SET total = @total WHERE idPedido = @id",
+                new { total, id = idPedidoInsertado },
+                transaction: tran
+            );
+
+            tran.Commit();
+
+            // Recuperar pedido completo
+            var pedidoCompleto = await Conexion.QuerySingleAsync<Pedido>(
+                "SELECT idPedido AS IdPedido, idCliente AS IdCliente, fechaVenta AS FechaVenta, total AS Total FROM Pedido WHERE idPedido = @id",
+                new { id = idPedidoInsertado }
+            );
+
+            var productos = await Conexion.QueryAsync<ProductoPedido>(
+                @"SELECT 
+                    pp.idProducto AS IdProducto,
+                    p.nombre AS Nombre,
+                    pp.cantidad AS Cantidad,
+                    pp.precio AS PrecioUnitario
+                FROM ProductoPedidos pp
+                INNER JOIN Producto p ON p.idProducto = pp.idProducto
+                WHERE pp.idPedido = @idPedido",
+                new { idPedido = idPedidoInsertado }
+            );
+
+            pedidoCompleto.Productos = productos.ToList();
+            return pedidoCompleto;
         }
-
-        await Task.Delay(200);
-
-        var pedidoCompleto = await Conexion.QuerySingleAsync<Pedido>(
-            "SELECT idPedido AS IdPedido, idCliente AS IdCliente, fechaVenta AS FechaVenta, total AS Total FROM Pedido WHERE idPedido = @id",
-            new { id = idPedidoInsertado }
-        );
-
-        var productos = await Conexion.QueryAsync<ProductoPedido>(
-            @"SELECT 
-                pp.idProducto AS IdProducto,
-                p.nombre AS Nombre,
-                pp.cantidad AS Cantidad,
-                pp.precio AS PrecioUnitario
-            FROM ProductoPedidos pp
-            INNER JOIN Producto p ON p.idProducto = pp.idProducto
-            WHERE pp.idPedido = @idPedido",
-            new { idPedido = idPedidoInsertado }
-        );
-
-        pedidoCompleto.Productos = productos.ToList();
-
-        return pedidoCompleto;
+        catch
+        {
+            try { tran.Rollback(); } catch { }
+            throw;
+        }
     }
+
 
 
 

@@ -1653,11 +1653,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
+      "projectUniqueName": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
       "projectName": "AdoDapper",
-      "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
+      "projectPath": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\obj\\",
+      "outputPath": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\AdoDapper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1678,8 +1678,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj": {
-              "projectPath": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj"
+            "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj"
             }
           }
         }

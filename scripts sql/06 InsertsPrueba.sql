@@ -68,4 +68,3 @@ VALUES (@pedido, 1, 100, 2),
 -- Verificar el total actualizado
 SELECT * FROM Pedido WHERE idPedido = @pedido;
 */
-SELECT * FROM Producto WHERE idMarca = 1;

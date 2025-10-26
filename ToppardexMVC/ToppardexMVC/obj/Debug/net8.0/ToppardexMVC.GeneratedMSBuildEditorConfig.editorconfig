@@ -9,13 +9,13 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ToppardexMVC
 build_property.RootNamespace = ToppardexMVC
-build_property.ProjectDir = c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC\
+build_property.ProjectDir = C:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC
+build_property.MSBuildProjectDirectory = C:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/crear.cshtml]

@@ -51,11 +51,26 @@ namespace Topardex.top.Controllers
                 return View(pedido);
             }
 
-            // La fecha se asigna automáticamente en el repo
+            Console.WriteLine($"IdCliente: {pedido.IdCliente}");
+            Console.WriteLine($"Productos count: {pedido.Productos?.Count ?? 0}");
+
+            if (pedido.Productos == null || pedido.Productos.Count == 0)
+            {
+                ModelState.AddModelError("", "Debe agregar al menos un producto al pedido.");
+                ViewBag.Productos = await _repoProducto.ObtenerAsync();
+                return View(pedido);
+            }
+
+            foreach (var p in pedido.Productos)
+            {
+                Console.WriteLine($"Producto: {p.IdProducto}, Cantidad: {p.Cantidad}, Precio: {p.PrecioUnitario}");
+            }
+
             var pedidoCreado = await _repoPedido.AltaPedidoAsync(pedido);
 
             return RedirectToAction(nameof(Detalle), new { id = pedidoCreado.IdPedido });
         }
+
 
 
         

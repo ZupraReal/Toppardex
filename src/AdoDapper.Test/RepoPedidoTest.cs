@@ -15,12 +15,19 @@ public class RepoPedidoTest : TestBase
         var parametros = new DynamicParameters();
         parametros.Add("xidcliente", 1);
         parametros.Add("xfechaventa", DateTime.Now);
+        parametros.Add("xidPedido", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-        int idPedidoInsertado = await Conexion.ExecuteScalarAsync<int>(
+        // Ejecuta el SP con parámetro OUT
+        await Conexion.ExecuteAsync(
             "AltaPedido",
             parametros,
-            commandType: CommandType.StoredProcedure);
+            commandType: CommandType.StoredProcedure
+        );
 
+        int idPedidoInsertado = parametros.Get<int>("xidPedido");
+        Assert.True(idPedidoInsertado > 0, "No se obtuvo idPedido desde el SP");
+
+        // Insertar productos
         await Conexion.ExecuteAsync(
             "INSERT INTO ProductoPedidos (idPedido, idProducto, precio, cantidad) VALUES (@Pedido, @Prod, @Precio, @Cant)",
             new[]
@@ -29,19 +36,11 @@ public class RepoPedidoTest : TestBase
                 new { Pedido = idPedidoInsertado, Prod = 2, Precio = 200m, Cant = 1 }
             });
 
-        await Task.Delay(500); // Espera al trigger
+        // Espera que el trigger actualice el total
+        await Task.Delay(500);
 
-        var config = new ConfigurationBuilder()
-            .SetBasePath(AppContext.BaseDirectory)
-            .AddJsonFile("appSettings.json", optional: false, reloadOnChange: true)
-            .Build();
-
-        var connectionString = config.GetConnectionString("MySQL");
-
-        await using var nuevaConexion = new MySqlConnection(connectionString);
-        await nuevaConexion.OpenAsync();
-
-        var pedidoDb = await nuevaConexion.QuerySingleOrDefaultAsync<Pedido>(
+        // Recuperar el pedido desde BD
+        var pedidoDb = await Conexion.QuerySingleOrDefaultAsync<Pedido>(
             "SELECT idPedido, idCliente, fechaVenta, total FROM Pedido WHERE idPedido = @IdPedido",
             new { IdPedido = idPedidoInsertado });
 
@@ -51,4 +50,5 @@ public class RepoPedidoTest : TestBase
         Assert.Equal(1, pedidoDb.IdCliente);
         Assert.Equal(totalEsperado, pedidoDb.Total);
     }
+
 }

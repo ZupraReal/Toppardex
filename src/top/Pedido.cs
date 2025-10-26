@@ -20,6 +20,4 @@ public class Pedido
     [JsonIgnore]
     public decimal Total { get; set; } 
 
-    [JsonIgnore]
-    public string Estado { get; set; } = "Pendiente";
 }
