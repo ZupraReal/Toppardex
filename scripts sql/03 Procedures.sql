@@ -84,15 +84,23 @@ BEGIN
 END $$
 DELIMITER $$
 
+DROP PROCEDURE IF EXISTS AltaProductoPedido $$
 CREATE PROCEDURE AltaProductoPedido(
     IN xidPedido INT,
     IN xidProducto INT,
-    IN xcantidad INT,
-    IN xprecioUnitario DECIMAL(10,2)
+    IN xcantidad INT
 )
 BEGIN
+    DECLARE xprecio DECIMAL(10,2);
+
+    -- Tomar el precio del producto
+    SELECT precio INTO xprecio
+    FROM Producto
+    WHERE idProducto = xidProducto;
+
+    -- Insertar el producto con ese precio
     INSERT INTO ProductoPedidos (idPedido, idProducto, cantidad, precio)
-    VALUES (xidPedido, xidProducto, xcantidad, xprecioUnitario);
+    VALUES (xidPedido, xidProducto, xcantidad, xprecio);
 END $$
 
 DELIMITER ;

@@ -37,7 +37,6 @@ public class RepoPedido : RepoGenerico, IRepoPedido
             paramProd.Add("xidPedido", idPedidoInsertado);
             paramProd.Add("xidProducto", item.IdProducto);
             paramProd.Add("xcantidad", item.Cantidad);
-            paramProd.Add("xprecioUnitario", item.PrecioUnitario);
 
             await Conexion.ExecuteAsync(
                 "AltaProductoPedido",
@@ -45,6 +44,7 @@ public class RepoPedido : RepoGenerico, IRepoPedido
                 commandType: CommandType.StoredProcedure
             );
         }
+
 
         // 4️⃣ Recuperar el pedido completo desde la BD
         var pedidoCompleto = await Conexion.QuerySingleAsync<Pedido>(

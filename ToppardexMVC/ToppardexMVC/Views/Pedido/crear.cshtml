@@ -19,7 +19,6 @@
             <tr>
                 <th>Producto</th>
                 <th>Cantidad</th>
-                <th>Precio Unitario</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -35,7 +34,6 @@
                     </select>
                 </td>
                 <td><input type="number" name="Productos[0].Cantidad" class="form-control" min="1" value="1" required /></td>
-                <td><input type="number" name="Productos[0].PrecioUnitario" class="form-control" step="0.01" min="0" required /></td>
                 <td><button type="button" class="btn btn-danger btn-sm" onclick="eliminarFila(this)">X</button></td>
             </tr>
         </tbody>
@@ -51,7 +49,7 @@
 let contador = 1;
 
 document.getElementById('btnAgregar').addEventListener('click', function() {
-    const tabla = document.getElementById('tablaProductos').getElementsByTagName('tbody')[0];
+    const tabla = document.querySelector('#tablaProductos tbody');
     const nuevaFila = document.createElement('tr');
 
     nuevaFila.innerHTML = `
@@ -65,7 +63,6 @@ document.getElementById('btnAgregar').addEventListener('click', function() {
             </select>
         </td>
         <td><input type="number" name="Productos[${contador}].Cantidad" class="form-control" min="1" value="1" required /></td>
-        <td><input type="number" name="Productos[${contador}].PrecioUnitario" class="form-control" step="0.01" min="0" required /></td>
         <td><button type="button" class="btn btn-danger btn-sm" onclick="eliminarFila(this)">X</button></td>
     `;
     tabla.appendChild(nuevaFila);
@@ -81,8 +78,7 @@ function actualizarIndices() {
     const filas = document.querySelectorAll('#tablaProductos tbody tr');
     filas.forEach((fila, index) => {
         fila.querySelectorAll('input, select').forEach(el => {
-            const name = el.name;
-            const partes = name.split('.');
+            const partes = el.name.split('.');
             partes[0] = `Productos[${index}]`;
             el.name = partes.join('.');
         });
