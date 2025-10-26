@@ -1,0 +1,32 @@
+@model IEnumerable<Topardex.Marca>
+@{
+    ViewData["Title"] = "Marcas";
+}
+
+<h1 class="mb-4">Listado de Marcas</h1>
+
+<a href="/Marca/Crear" class="btn btn-primary mb-3">+ Nueva Marca</a>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var marca in Model)
+        {
+            <tr>
+                <td>@marca.IdMarca</td>
+                <td>@marca.Nombre</td>
+                <td>
+                    <a href="/Marca/Detalle/@marca.IdMarca" class="btn btn-info btn-sm">Ver</a>
+                    <a href="/Marca/Editar/@marca.IdMarca" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="/Marca/Eliminar/@marca.IdMarca" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

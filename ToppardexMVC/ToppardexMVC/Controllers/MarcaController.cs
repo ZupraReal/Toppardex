@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Topardex.top.Persistencia;
+using Topardex;
+using Topardex.top.Persistencia; // si tu repositorio está ahí (ajustá si cambia el namespace)
 
 namespace Topardex.top.Controllers
 {
@@ -44,6 +45,47 @@ namespace Topardex.top.Controllers
                 return View(marca);
 
             await _repoMarca.AltaAsync(marca);
+            return RedirectToAction(nameof(Index));
+        }
+
+        // GET: /Marca/Editar/5
+        public async Task<IActionResult> Editar(int id)
+        {
+            var marca = await _repoMarca.DetalleAsync(id);
+            if (marca == null)
+                return NotFound();
+
+            return View(marca);
+        }
+
+        // POST: /Marca/Editar
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Editar(Marca marca)
+        {
+            if (!ModelState.IsValid)
+                return View(marca);
+
+            await _repoMarca.ActualizarMarcaAsync(marca);
+            return RedirectToAction(nameof(Index));
+        }
+
+        // GET: /Marca/Eliminar/5
+        public async Task<IActionResult> Eliminar(int id)
+        {
+            var marca = await _repoMarca.DetalleAsync(id);
+            if (marca == null)
+                return NotFound();
+
+            return View(marca);
+        }
+
+        // POST: /Marca/EliminarConfirmado
+        [HttpPost, ActionName("EliminarConfirmado")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EliminarConfirmado(int id)
+        {
+            await _repoMarca.EliminarMarcaAsync(id);
             return RedirectToAction(nameof(Index));
         }
     }

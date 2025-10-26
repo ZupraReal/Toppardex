@@ -49,4 +49,24 @@ public class RepoProducto : RepoGenerico, IRepoProducto
             "SELECT * FROM Producto WHERE Precio = @Precio",
             new { precio });
     }
+
+    public async Task ActualizarProductoAsync(Producto producto)
+    {
+        var parametros = new DynamicParameters();
+        parametros.Add("@xidProducto", producto.IdProducto);
+        parametros.Add("@xnombre", producto.Nombre);
+        parametros.Add("@xprecio", producto.Precio);
+        parametros.Add("@xstock", producto.Stock);
+        parametros.Add("@xidMarca", producto.IdMarca);
+
+        await _connection.ExecuteAsync("ActualizarProducto", parametros, commandType: CommandType.StoredProcedure);
+    }
+
+    public async Task EliminarProductoAsync(int id)
+    {
+        var parametros = new DynamicParameters();
+        parametros.Add("@xidProducto", id);
+        await _connection.ExecuteAsync("EliminarProducto", parametros, commandType: CommandType.StoredProcedure);
+    }
+
 }

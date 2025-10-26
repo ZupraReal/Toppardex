@@ -57,5 +57,6 @@ CREATE TABLE ProductoPedidos (
 	precio decimal (10, 2) not null,
 	cantidad smallint unsigned not null,
 	primary key (idPedido, idProducto),
-	foreign key (idPedido) references Pedido(idPedido)
+	foreign key (idPedido) references Pedido(idPedido),
+	FOREIGN KEY (idProducto) REFERENCES Producto(idProducto) ON DELETE CASCADE
 );

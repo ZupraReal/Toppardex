@@ -1,0 +1,13 @@
+@model Topardex.Marca
+@{
+    ViewData["Title"] = "Detalle de Marca";
+}
+
+<h1 class="mb-4">Detalle de Marca</h1>
+
+<div class="card p-4 shadow-sm">
+    <p><strong>ID:</strong> @Model.IdMarca</p>
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+</div>
+
+<a href="/Marca" class="btn btn-secondary mt-3">← Volver</a>

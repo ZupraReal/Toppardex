@@ -28,9 +28,10 @@
         </div>
 
         <div class="mb-3">
-            <label for="IdMarca" class="form-label">ID Marca</label>
-            <input asp-for="IdMarca" class="form-control" type="number" required />
-            <span asp-validation-for="IdMarca" class="text-danger"></span>
+            <label class="form-label">Marca</label>
+            <select asp-for="IdMarca" class="form-control" asp-items="@(new SelectList(ViewBag.Marcas, "IdMarca", "Nombre"))">
+                <option value="">Seleccione una marca</option>
+            </select>
         </div>
 
         <button type="submit" class="btn btn-primary">

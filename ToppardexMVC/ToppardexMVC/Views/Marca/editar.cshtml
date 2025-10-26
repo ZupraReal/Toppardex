@@ -1,0 +1,18 @@
+@model Topardex.Marca
+@{
+    ViewData["Title"] = "Editar Marca";
+}
+
+<h1 class="mb-4">Editar Marca</h1>
+
+<form asp-action="Editar" method="post" class="card p-4 shadow-sm">
+    <input type="hidden" asp-for="IdMarca" />
+
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input asp-for="Nombre" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+    <a href="/Marca" class="btn btn-secondary ms-2">Cancelar</a>
+</form>

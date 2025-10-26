@@ -1,0 +1,19 @@
+@using Topardex
+@model Producto
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+
+<h2>¿Seguro que deseas eliminar este producto?</h2>
+
+<div>
+    <h4>@Model.Nombre</h4>
+    <p>Precio: @Model.Precio</p>
+    <p>Stock: @Model.Stock</p>
+</div>
+
+<form asp-action="EliminarConfirmado" method="post">
+    <input type="hidden" asp-for="IdProducto" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

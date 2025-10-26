@@ -31,4 +31,19 @@ public class RepoMarca : RepoGenerico, IRepoMarca
             "SELECT * FROM Marca WHERE IdMarca = @id",
             new { id });
     }
+
+        public async Task ActualizarMarcaAsync(Marca marca)
+    {
+        var parametros = new DynamicParameters();
+        parametros.Add("@xidMarca", marca.IdMarca);
+        parametros.Add("@xnombre", marca.Nombre);
+        await _connection.ExecuteAsync("ActualizarMarca", parametros, commandType: CommandType.StoredProcedure);
+    }
+
+    public async Task EliminarMarcaAsync(int id)
+    {
+        var parametros = new DynamicParameters();
+        parametros.Add("@xidMarca", id);
+        await _connection.ExecuteAsync("EliminarMarca", parametros, commandType: CommandType.StoredProcedure);
+    }
 }

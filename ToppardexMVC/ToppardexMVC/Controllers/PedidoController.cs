@@ -46,5 +46,7 @@ namespace Topardex.top.Controllers
             await _repoPedido.AltaPedidoAsync(pedido);
             return RedirectToAction(nameof(Index));
         }
+
+        
     }
 }

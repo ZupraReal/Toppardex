@@ -9,5 +9,8 @@ namespace Topardex.top.Persistencia
         Task AltaAsync(Marca marca);
         Task<IEnumerable<Marca>> ObtenerAsync();
         Task<Marca?> DetalleAsync(int id);
+
+        Task ActualizarMarcaAsync(Marca marca);
+        Task EliminarMarcaAsync(int id);
     }
 }

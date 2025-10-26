@@ -11,5 +11,8 @@ namespace Topardex.top.Persistencia
         Task<Producto?> DetalleAsync(int id);
         Task<IEnumerable<Producto>> ObtenerPorMarcaAsync(int idMarca);
         Task<IEnumerable<Producto>> ObtenerPorPrecioAsync(decimal precio);
+
+        Task ActualizarProductoAsync(Producto producto);
+        Task EliminarProductoAsync(int id);
     }
 }

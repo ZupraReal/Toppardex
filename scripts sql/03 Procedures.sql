@@ -94,4 +94,62 @@ END $$
 
 DELIMITER ;
 
+-- ✅ Actualizar una marca existente
+DROP PROCEDURE IF EXISTS ActualizarMarca;
+DELIMITER //
+CREATE PROCEDURE ActualizarMarca(IN xidMarca SMALLINT, IN xnombre VARCHAR(50))
+BEGIN
+    UPDATE Marca SET nombre = xnombre WHERE idMarca = xidMarca;
+END //
+DELIMITER ;
+
+-- ✅ Eliminar una marca
+DROP PROCEDURE IF EXISTS EliminarMarca;
+DELIMITER //
+CREATE PROCEDURE EliminarMarca(IN xidMarca SMALLINT)
+BEGIN
+    DECLARE cantProductos INT;
+    SELECT COUNT(*) INTO cantProductos FROM Producto WHERE idMarca = xidMarca;
+
+    IF cantProductos > 0 THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'No se puede eliminar la marca porque tiene productos asociados.';
+    ELSE
+        DELETE FROM Marca WHERE idMarca = xidMarca;
+    END IF;
+END //
+DELIMITER ;
+
+-- ✅ Actualizar un producto
+DROP PROCEDURE IF EXISTS ActualizarProducto;
+DELIMITER //
+CREATE PROCEDURE ActualizarProducto(
+    IN xidProducto SMALLINT,
+    IN xnombre VARCHAR(45),
+    IN xprecio DECIMAL(10,2),
+    IN xstock SMALLINT,
+    IN xidMarca SMALLINT
+)
+BEGIN
+    UPDATE Producto
+    SET nombre = xnombre,
+        precio = xprecio,
+        stock = xstock,
+        idMarca = xidMarca
+    WHERE idProducto = xidProducto;
+END //
+DELIMITER ;
+
+-- ✅ Eliminar un producto
+DROP PROCEDURE IF EXISTS EliminarProducto;
+DELIMITER //
+CREATE PROCEDURE EliminarProducto(
+    IN xidProducto SMALLINT
+)
+BEGIN
+    DELETE FROM Producto WHERE idProducto = xidProducto;
+END //
+DELIMITER ;
+
+
+
 
