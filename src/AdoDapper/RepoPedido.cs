@@ -19,7 +19,7 @@ public class RepoPedido : RepoGenerico, IRepoPedido
         parametros.Add("xidcliente", pedido.IdCliente);
         parametros.Add("xfechaventa", DateTime.Now);
 
-        int idPedidoInsertado = await Conexion.ExecuteScalarAsync<int>(
+        int idPedidoInsertado = await Conexion.QuerySingleAsync<int>(
             "AltaPedido",
             parametros,
             commandType: CommandType.StoredProcedure
@@ -116,5 +116,5 @@ public class RepoPedido : RepoGenerico, IRepoPedido
         return pedido;
     }
 
-    
+
 }

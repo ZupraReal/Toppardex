@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Topardex.Ado.Dapper;
 using Topardex.top.Persistencia;
 
 namespace Topardex.top.Controllers
@@ -6,10 +7,12 @@ namespace Topardex.top.Controllers
     public class PedidoController : Controller
     {
         private readonly IRepoPedido _repoPedido;
+         private readonly IRepoProducto _repoProducto;
 
-        public PedidoController(IRepoPedido repoPedido)
+        public PedidoController(IRepoPedido repoPedido, IRepoProducto repoProducto)
         {
             _repoPedido = repoPedido;
+            _repoProducto = repoProducto;
         }
 
         // GET: /Pedido
@@ -30,8 +33,10 @@ namespace Topardex.top.Controllers
         }
 
         // GET: /Pedido/Crear
-        public IActionResult Crear()
+        public async Task<IActionResult> Crear()
         {
+            // Traemos los productos disponibles para el dropdown
+            ViewBag.Productos = await _repoProducto.ObtenerAsync();
             return View();
         }
 
@@ -41,11 +46,17 @@ namespace Topardex.top.Controllers
         public async Task<IActionResult> Crear(Pedido pedido)
         {
             if (!ModelState.IsValid)
+            {
+                ViewBag.Productos = await _repoProducto.ObtenerAsync();
                 return View(pedido);
+            }
 
-            await _repoPedido.AltaPedidoAsync(pedido);
-            return RedirectToAction(nameof(Index));
+            // La fecha se asigna automáticamente en el repo
+            var pedidoCreado = await _repoPedido.AltaPedidoAsync(pedido);
+
+            return RedirectToAction(nameof(Detalle), new { id = pedidoCreado.IdPedido });
         }
+
 
         
     }

@@ -1,5 +1,5 @@
 @using Topardex
-@model Topardex.Pedido
+@model Pedido
 
 @{
     ViewData["Title"] = "Nuevo Pedido";
@@ -14,27 +14,66 @@
         <span asp-validation-for="IdCliente" class="text-danger"></span>
     </div>
 
-    <div class="mb-3">
-        <label class="form-label">Fecha</label>
-        <input asp-for="FechaVenta" type="datetime-local" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
-        <span asp-validation-for="FechaVenta" class="text-danger"></span>
-    </div>
+    <h5>Productos</h5>
+    <table class="table" id="tablaProductos">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <select name="Productos[0].IdProducto" class="form-select" required>
+                        <option value="">-- Seleccionar --</option>
+                        @foreach (var p in (IEnumerable<Producto>)ViewBag.Productos)
+                        {
+                            <option value="@p.IdProducto">@p.Nombre</option>
+                        }
+                    </select>
+                </td>
+                <td><input type="number" name="Productos[0].Cantidad" class="form-control" min="1" value="1" required /></td>
+                <td><input type="number" name="Productos[0].PrecioUnitario" class="form-control" step="0.01" min="0" required /></td>
+                <td><button type="button" class="btn btn-danger btn-sm" onclick="eliminarFila(this)">X</button></td>
+            </tr>
+        </tbody>
+    </table>
 
-    <!-- Si querés crear el pedido con productos en el formulario, habría que añadir controls JS para agregarlos.
-         Por ahora asuma que el pedido se crea vacío y luego se le agregan productos desde otra pantalla. -->
+    <button type="button" class="btn btn-secondary mb-3" id="btnAgregar">Agregar Producto</button>
 
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary">Guardar Pedido</button>
     <a href="/Pedido" class="btn btn-secondary ms-2">Cancelar</a>
 </form>
 
 @section Scripts {
-    <script>
-        document.getElementById('formPedido').addEventListener('submit', function (e) {
-            const idCliente = document.querySelector('[name="IdCliente"]').value;
-            if (!idCliente || isNaN(Number(idCliente)) || Number(idCliente) <= 0) {
-                e.preventDefault();
-                alert('Ingresá un IdCliente válido.');
-            }
-        });
-    </script>
+<script>
+let contador = 1;
+document.getElementById('btnAgregar').addEventListener('click', function() {
+    const tabla = document.getElementById('tablaProductos').getElementsByTagName('tbody')[0];
+    const nuevaFila = document.createElement('tr');
+    nuevaFila.innerHTML = `
+        <td>
+            <select name="Productos[${contador}].IdProducto" class="form-select" required>
+                <option value="">-- Seleccionar --</option>
+                @foreach (var p in (IEnumerable<Producto>)ViewBag.Productos)
+                {
+                    <option value="@p.IdProducto">@p.Nombre</option>
+                }
+            </select>
+        </td>
+        <td><input type="number" name="Productos[${contador}].Cantidad" class="form-control" min="1" value="1" required /></td>
+        <td><input type="number" name="Productos[${contador}].PrecioUnitario" class="form-control" step="0.01" min="0" required /></td>
+        <td><button type="button" class="btn btn-danger btn-sm" onclick="eliminarFila(this)">X</button></td>
+    `;
+    tabla.appendChild(nuevaFila);
+    contador++;
+});
+
+function eliminarFila(btn) {
+    btn.closest('tr').remove();
+}
+</script>
 }
