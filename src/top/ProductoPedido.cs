@@ -4,7 +4,7 @@ namespace Topardex;
 
 public class ProductoPedido
 {
-    [JsonIgnore]
+
     public int IdProductoPedido { get; set; }
     public int IdProducto { get; set; } 
     public int Cantidad { get; set; }   

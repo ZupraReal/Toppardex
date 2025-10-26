@@ -7,7 +7,7 @@ namespace Topardex.top.Controllers
     public class PedidoController : Controller
     {
         private readonly IRepoPedido _repoPedido;
-         private readonly IRepoProducto _repoProducto;
+        private readonly IRepoProducto _repoProducto;
 
         public PedidoController(IRepoPedido repoPedido, IRepoProducto repoProducto)
         {
@@ -35,7 +35,6 @@ namespace Topardex.top.Controllers
         // GET: /Pedido/Crear
         public async Task<IActionResult> Crear()
         {
-            // Traemos los productos disponibles para el dropdown
             ViewBag.Productos = await _repoProducto.ObtenerAsync();
             return View();
         }
@@ -45,12 +44,6 @@ namespace Topardex.top.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(Pedido pedido)
         {
-            if (!ModelState.IsValid)
-            {
-                ViewBag.Productos = await _repoProducto.ObtenerAsync();
-                return View(pedido);
-            }
-
             Console.WriteLine($"IdCliente: {pedido.IdCliente}");
             Console.WriteLine($"Productos count: {pedido.Productos?.Count ?? 0}");
 
@@ -71,8 +64,5 @@ namespace Topardex.top.Controllers
             return RedirectToAction(nameof(Detalle), new { id = pedidoCreado.IdPedido });
         }
 
-
-
-        
     }
 }
