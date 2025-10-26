@@ -4,7 +4,7 @@ using Topardex.top.Persistencia;
 
 namespace Topardex.Ado.Dapper;
 
-public class RepoCliente : RepoGenerico
+public class RepoCliente : RepoGenerico, IRepoCliente
 {
     private readonly IDbConnection _connection;
 

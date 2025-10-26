@@ -1,7 +1,13 @@
-namespace Topardex.top.Persistencia;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Topardex;
 
-public interface IRepoMarca
+namespace Topardex.top.Persistencia
 {
-    public int IdMarca { get; set; }
-    public string Nombre { get; set; }
+    public interface IRepoMarca
+    {
+        Task AltaAsync(Marca marca);
+        Task<IEnumerable<Marca>> ObtenerAsync();
+        Task<Marca?> DetalleAsync(int id);
+    }
 }

@@ -29,3 +29,4 @@ c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMV
 c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC\obj\Debug\net8.0\ToppardexMVC.pdb
 c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC\obj\Debug\net8.0\ToppardexMVC.genruntimeconfig.cache
 c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC\obj\Debug\net8.0\ref\ToppardexMVC.dll
+C:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\ToppardexMVC\ToppardexMVC\obj\Debug\net8.0\ToppardexMVC.csproj.AssemblyReference.cache

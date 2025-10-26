@@ -1,11 +1,15 @@
-namespace Topardex.top.Persistencia;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Topardex;
 
-public class IRepoProducto
+namespace Topardex.top.Persistencia
 {
-    public int IdProducto { get; set; }
-    public required string Nombre { get; set; }
-    public decimal Precio { get; set; }
-    public int Stock { get; set; }
-
-    public int IdMarca { get; set; }
+    public interface IRepoProducto
+    {
+        Task AltaAsync(Producto producto);
+        Task<IEnumerable<Producto>> ObtenerAsync();
+        Task<Producto?> DetalleAsync(int id);
+        Task<IEnumerable<Producto>> ObtenerPorMarcaAsync(int idMarca);
+        Task<IEnumerable<Producto>> ObtenerPorPrecioAsync(decimal precio);
+    }
 }

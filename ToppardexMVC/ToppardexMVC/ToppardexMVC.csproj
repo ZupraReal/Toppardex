@@ -6,4 +6,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+
+<ItemGroup>
+  <PackageReference Include="MySqlConnector" Version="2.4.0" />
+</ItemGroup>
+
+
+<ItemGroup>
+  <ProjectReference Include="..\..\src\top\top.csproj" />
+  <ProjectReference Include="..\..\src\AdoDapper\AdoDapper.csproj" />
+</ItemGroup>
+
+
 </Project>

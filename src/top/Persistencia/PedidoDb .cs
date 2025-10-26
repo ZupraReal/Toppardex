@@ -1,9 +1,14 @@
-namespace Topardex.top.Persistencia;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Topardex;
 
-public class PedidoDb
+namespace Topardex.top.Persistencia
 {
-    public int IdPedido { get; set; }
-    public int IdCliente { get; set; }
-    public DateTime FechaVenta { get; set; } = DateTime.Now;
-    public string Estado { get; set; } = "Pendiente";
+    public interface IRepoPedido
+    {
+        Task<Pedido> AltaPedidoAsync(Pedido pedido);
+        Task<IEnumerable<Pedido>> ObtenerAsync();
+        Task<Pedido?> DetalleAsync(int idPedido);
+    }
 }
+

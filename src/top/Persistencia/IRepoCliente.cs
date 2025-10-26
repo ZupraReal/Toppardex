@@ -1,10 +1,29 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Topardex;
+
 namespace Topardex.top.Persistencia;
 
 public interface IRepoCliente
 {
-    public int IdCliente { get; set; }
-    public  string Nombre { get; set; }
-    public  string Apellido { get; set; }
-    public string Pais { get; set; }
-    public DateTime FechaDeNacimiento { get; set; }
+    /// <summary>
+    /// Operaciones de persistencia para Clientes.
+    /// </summary>
+    public interface IRepoCliente
+    {
+        /// <summary>
+        /// Inserta un cliente (usa el Stored Procedure AltaCliente en tu BD).
+        /// </summary>
+        Task AltaAsync(Cliente cliente);
+
+        /// <summary>
+        /// Devuelve todos los clientes.
+        /// </summary>
+        Task<IEnumerable<Cliente>> ObtenerAsync();
+
+        /// <summary>
+        /// Devuelve un cliente por id o null si no existe.
+        /// </summary>
+        Task<Cliente?> DetalleAsync(int id);
+    }
 }
