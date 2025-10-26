@@ -4,8 +4,6 @@ using Topardex;
 
 namespace Topardex.top.Persistencia;
 
-public interface IRepoCliente
-{
     /// <summary>
     /// Operaciones de persistencia para Clientes.
     /// </summary>
@@ -26,4 +24,4 @@ public interface IRepoCliente
         /// </summary>
         Task<Cliente?> DetalleAsync(int id);
     }
-}
+

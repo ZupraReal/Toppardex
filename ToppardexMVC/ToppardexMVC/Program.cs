@@ -3,10 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MySqlConnector;
 using System.Data;
-using Topardex.top.Persistencia; // interfaces
-using Topardex;                       // Entidades (Cliente, Pedido, etc.)        // Interfaces IRepo...
+using Topardex.top.Persistencia; 
+using Topardex;                       
 using Topardex.Ado.Dapper;
-                 // Implementaciones Repo...// implementación Dapper
 
 var builder = WebApplication.CreateBuilder(args);
 
