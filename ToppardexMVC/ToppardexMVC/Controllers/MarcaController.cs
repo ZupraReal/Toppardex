@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MySqlConnector;
 using Topardex;
 using Topardex.top.Persistencia; // si tu repositorio está ahí (ajustá si cambia el namespace)
 
@@ -92,8 +93,21 @@ namespace Topardex.top.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EliminarConfirmado(int idMarca)
         {
-            await _repoMarca.EliminarMarcaAsync(idMarca);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _repoMarca.EliminarMarcaAsync(idMarca);
+                TempData["MensajeExito"] = "Marca eliminada correctamente.";
+            }
+            catch (MySqlException ex)
+            {
+                // Si es una violación de clave foránea (productos asociados)
+                if (ex.Message.Contains("productos asociados"))
+                    TempData["MensajeError"] = "No se puede eliminar la marca porque tiene productos asociados.";
+                else
+                    TempData["MensajeError"] = "Ocurrió un error al intentar eliminar la marca.";
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

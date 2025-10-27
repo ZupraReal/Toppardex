@@ -42,11 +42,34 @@ namespace Topardex.top.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(Cliente cliente)
         {
+            // Validar campos de texto
+            if (ContieneNumeros(cliente.Nombre) || ContieneNumeros(cliente.Apellido) || ContieneNumeros(cliente.Pais))
+            {
+                ViewBag.Error = "Nombre, Apellido y País no deben contener números.";
+                return View(cliente); // Vuelve a la vista con el mensaje
+            }
+
+            // Validar modelo
             if (!ModelState.IsValid)
                 return View(cliente);
 
-            await _repoCliente.AltaAsync(cliente);
+            try
+            {
+                await _repoCliente.AltaAsync(cliente);
+                TempData["MensajeExito"] = "Cliente creado correctamente.";
+            }
+            catch (Exception ex)
+            {
+                TempData["MensajeError"] = "Ocurrió un error al crear el cliente.";
+            }
+
             return RedirectToAction(nameof(Index));
         }
+
+        private bool ContieneNumeros(string texto)
+        {
+            return !string.IsNullOrEmpty(texto) && texto.Any(char.IsDigit);
+        }
+
     }
 }
