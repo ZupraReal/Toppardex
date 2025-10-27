@@ -132,7 +132,7 @@ DELIMITER ;
 
 -- ✅ Actualizar un producto
 DROP PROCEDURE IF EXISTS ActualizarProducto;
-DELIMITER //
+DELIMITER $$
 CREATE PROCEDURE ActualizarProducto(
     IN xidProducto SMALLINT,
     IN xnombre VARCHAR(45),
@@ -147,7 +147,7 @@ BEGIN
         stock = xstock,
         idMarca = xidMarca
     WHERE idProducto = xidProducto;
-END //
+END $$
 DELIMITER ;
 
 -- ✅ Eliminar un producto
@@ -162,5 +162,32 @@ END //
 DELIMITER ;
 
 
+DROP PROCEDURE IF EXISTS EliminarCliente;
+DELIMITER $$
+CREATE PROCEDURE EliminarCliente(
+    IN xidCliente SMALLINT
+)
+BEGIN 
+    DELETE FROM Cliente WHERE idCliente = xidCliente;
+END $$
 
+DELIMITER ;
+DROP PROCEDURE IF EXISTS ActualizarCliente;
+DELIMITER $$
+CREATE PROCEDURE ActualizarCliente(
+    IN xidCliente SMALLINT UNSIGNED,
+    IN xnombre VARCHAR(45),
+    IN xapellido VARCHAR(45),
+    IN xpais VARCHAR(45),
+    IN xFechaDeNacimiento DATE
+)
+BEGIN
+    UPDATE Cliente
+    SET nombre = xnombre,
+        apellido = xapellido,
+        pais = xpais,
+        fechaDeNacimiento = xFechaDeNacimiento
+    WHERE idCliente = xidCliente;
+END $$
+DELIMITER ;
 

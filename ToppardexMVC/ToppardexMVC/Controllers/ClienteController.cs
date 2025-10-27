@@ -40,14 +40,12 @@ namespace Topardex.top.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(Cliente cliente)
         {
-            // Validar campos de texto
             if (ContieneNumeros(cliente.Nombre) || ContieneNumeros(cliente.Apellido) || ContieneNumeros(cliente.Pais))
             {
                 ViewBag.Error = "Nombre, Apellido y País no deben contener números.";
-                return View(cliente); // Vuelve a la vista con el mensaje
+                return View(cliente);
             }
 
-            // Validar modelo
             if (!ModelState.IsValid)
                 return View(cliente);
 
@@ -56,9 +54,74 @@ namespace Topardex.top.Controllers
                 await _repoCliente.AltaAsync(cliente);
                 TempData["MensajeExito"] = "Cliente creado correctamente.";
             }
-            catch (Exception ex)
+            catch
             {
                 TempData["MensajeError"] = "Ocurrió un error al crear el cliente.";
+            }
+
+            return RedirectToAction("index", "cliente");
+        }
+
+        // 🔹 GET: /Cliente/Editar/5
+        public async Task<IActionResult> Editar(int id)
+        {
+            var cliente = await _repoCliente.DetalleAsync(id);
+            if (cliente == null)
+                return NotFound();
+
+            return View(cliente);
+        }
+
+        // 🔹 POST: /Cliente/Editar
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Editar(Cliente cliente)
+        {
+            if (ContieneNumeros(cliente.Nombre) || ContieneNumeros(cliente.Apellido) || ContieneNumeros(cliente.Pais))
+            {
+                ViewBag.Error = "Nombre, Apellido y País no deben contener números.";
+                return View(cliente);
+            }
+
+            if (!ModelState.IsValid)
+                return View(cliente);
+
+            try
+            {
+                await _repoCliente.ActualizarAsync(cliente);
+                TempData["MensajeExito"] = "Cliente actualizado correctamente.";
+            }
+            catch
+            {
+                TempData["MensajeError"] = "Ocurrió un error al actualizar el cliente.";
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        // 🔹 GET: /Cliente/Eliminar/5
+        public async Task<IActionResult> Eliminar(int id)
+        {
+            var cliente = await _repoCliente.DetalleAsync(id);
+            if (cliente == null)
+                return NotFound();
+
+            return View(cliente);
+        }
+
+        // 🔹 POST: /Cliente/EliminarConfirmado
+        [HttpPost, ActionName("EliminarConfirmado")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EliminarConfirmado(int idCliente)
+        {
+            try
+            {
+                await _repoCliente.EliminarAsync(idCliente);
+                TempData["MensajeExito"] = "Cliente eliminado correctamente.";
+            }
+            catch
+            {
+                TempData["MensajeError"] = "No se pudo eliminar el cliente. Verifique dependencias.";
             }
 
             return RedirectToAction(nameof(Index));
@@ -68,6 +131,5 @@ namespace Topardex.top.Controllers
         {
             return !string.IsNullOrEmpty(texto) && texto.Any(char.IsDigit);
         }
-
     }
 }

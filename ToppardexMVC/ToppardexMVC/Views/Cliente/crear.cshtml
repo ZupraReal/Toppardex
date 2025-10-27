@@ -4,11 +4,6 @@
     ViewData["Title"] = "Crear Cliente";
 }
 
-@if (ViewBag.Error != null)
-{
-    <div class="alert alert-danger">@ViewBag.Error</div>
-}
-
 
 <h2>Nuevo Cliente</h2>
 <form asp-action="Crear" method="post">

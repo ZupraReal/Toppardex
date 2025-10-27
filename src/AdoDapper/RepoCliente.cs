@@ -35,4 +35,25 @@ public class RepoCliente : RepoGenerico, IRepoCliente
             "SELECT * FROM Cliente WHERE IdCliente = @id",
             new { id });
     }
+
+    public async Task ActualizarAsync(Cliente cliente)
+    {
+
+        var parametros = new DynamicParameters();
+        parametros.Add("xidCliente", cliente.IdCliente);
+        parametros.Add("xnombre", cliente.Nombre);
+        parametros.Add("xapellido", cliente.Apellido);
+        parametros.Add("xpais", cliente.Pais);
+        parametros.Add("xFechaDeNacimiento", cliente.FechaDeNacimiento);
+
+        await Conexion.ExecuteAsync("ActualizarCliente", parametros, commandType: CommandType.StoredProcedure);
+    }
+    public async Task EliminarAsync(int idCliente)
+    {
+        var parametros = new DynamicParameters();
+        parametros.Add("xidCliente", idCliente);
+
+        await Conexion.ExecuteAsync("EliminarCliente", parametros, commandType: CommandType.StoredProcedure);
+
+    }
 }
