@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj": {}
+    "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj": {
+    "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj",
+        "projectUniqueName": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj",
         "projectName": "top",
-        "projectPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj",
+        "projectPath": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\top.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\obj\\",
+        "outputPath": "c:\\Users\\Usuario\\OneDrive\\Documentos\\GitHub\\1\\Toppardex\\src\\top\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

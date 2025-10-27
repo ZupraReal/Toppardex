@@ -38,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2VyY2FEZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Bienvenida.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCaWVudmVuaWRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Contacto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +52,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Login/Bienvenida.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQmllbnZlbmlkYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Login/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5caW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Usuario/OneDrive/Documentos/GitHub/1/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/crear.cshtml]

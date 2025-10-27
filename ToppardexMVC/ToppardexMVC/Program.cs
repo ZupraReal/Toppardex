@@ -21,16 +21,15 @@ builder.Services.AddScoped<IRepoCliente, RepoCliente>();
 builder.Services.AddScoped<IRepoProducto, RepoProducto>();
 builder.Services.AddScoped<IRepoMarca, RepoMarca>();
 builder.Services.AddScoped<IRepoPedido, RepoPedido>();
-// Después de builder.Services.AddControllersWithViews();
-builder.Services.AddHttpContextAccessor(); // <--- esto registra IHttpContextAccessor
 
+// Registro de IHttpContextAccessor
+builder.Services.AddHttpContextAccessor();
 
 // ------------------ SESIÓN ------------------
-// Permite usar HttpContext.Session en los controladores
-builder.Services.AddDistributedMemoryCache(); // almacenamiento en memoria para sesión
+builder.Services.AddDistributedMemoryCache(); 
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // tiempo de expiración
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
@@ -49,12 +48,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-app.UseSession(); // <- Middleware de sesión
+app.UseSession(); 
 app.UseAuthorization();
 
-// Ruta por defecto
+// Ruta por defecto al login
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();
