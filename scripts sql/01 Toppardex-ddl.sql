@@ -60,3 +60,10 @@ CREATE TABLE ProductoPedidos (
 	foreign key (idPedido) references Pedido(idPedido),
 	FOREIGN KEY (idProducto) REFERENCES Producto(idProducto) ON DELETE CASCADE
 );
+
+CREATE TABLE Usuario (
+    idUsuario INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL,
+    pass VARCHAR(255) NOT NULL,
+	rol ENUM('Admin','Empleado') NOT NULL
+);

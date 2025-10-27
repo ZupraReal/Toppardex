@@ -33,6 +33,7 @@ namespace Topardex.top.Controllers
         }
 
         // GET: /Pedido/Crear
+        [AdminOnly]
         public async Task<IActionResult> Crear()
         {
             ViewBag.Productos = await _repoProducto.ObtenerAsync();
@@ -40,6 +41,7 @@ namespace Topardex.top.Controllers
         }
 
         // POST: /Pedido/Crear
+        [AdminOnly]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(Pedido pedido)

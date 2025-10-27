@@ -13,9 +13,10 @@ namespace Topardex.top.Controllers
             _repoMarca = repoMarca;
         }
 
+
         // GET: /Marca
         public async Task<IActionResult> Index()
-        {
+        { 
             var marcas = await _repoMarca.ObtenerAsync();
             return View(marcas);
         }
@@ -31,12 +32,14 @@ namespace Topardex.top.Controllers
         }
 
         // GET: /Marca/Crear
+        [AdminOnly]
         public IActionResult Crear()
         {
             return View();
         }
 
         // POST: /Marca/Crear
+        [AdminOnly]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(Marca marca)
@@ -49,6 +52,7 @@ namespace Topardex.top.Controllers
         }
 
         // GET: /Marca/Editar/5
+        [AdminOnly]
         public async Task<IActionResult> Editar(int id)
         {
             var marca = await _repoMarca.DetalleAsync(id);
@@ -59,6 +63,7 @@ namespace Topardex.top.Controllers
         }
 
         // POST: /Marca/Editar
+        [AdminOnly]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Editar(Marca marca)
@@ -71,6 +76,7 @@ namespace Topardex.top.Controllers
         }
 
         // GET: /Marca/Eliminar/5
+        [AdminOnly]
         public async Task<IActionResult> Eliminar(int id)
         {
             var marca = await _repoMarca.DetalleAsync(id);
@@ -81,6 +87,7 @@ namespace Topardex.top.Controllers
         }
 
         // POST: /Marca/EliminarConfirmado
+        [AdminOnly]
         [HttpPost, ActionName("EliminarConfirmado")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EliminarConfirmado(int idMarca)

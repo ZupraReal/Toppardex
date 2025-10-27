@@ -33,6 +33,7 @@ namespace TopardexMVC.Controllers
         }
 
         // GET: /Producto/Crear
+        [AdminOnly]
         public async Task<IActionResult> Crear()
         {
             ViewBag.Marcas = await _repoMarca.ObtenerAsync(); // para el dropdown
@@ -40,6 +41,7 @@ namespace TopardexMVC.Controllers
         }
 
         // POST: /Producto/Crear
+        [AdminOnly]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(Producto producto)
@@ -55,6 +57,7 @@ namespace TopardexMVC.Controllers
         }
 
         // GET: /Producto/Editar/5
+        [AdminOnly]
         public async Task<IActionResult> Editar(int id)
         {
             var producto = await _repoProducto.DetalleAsync(id);
@@ -66,6 +69,7 @@ namespace TopardexMVC.Controllers
         }
 
         // POST: /Producto/Editar
+        [AdminOnly]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Editar(Producto producto)
@@ -81,6 +85,7 @@ namespace TopardexMVC.Controllers
         }
 
         // GET: /Producto/Eliminar/5
+        [AdminOnly]
         public async Task<IActionResult> Eliminar(int id)
         {
             var producto = await _repoProducto.DetalleAsync(id);
@@ -91,6 +96,7 @@ namespace TopardexMVC.Controllers
         }
 
         // POST: /Producto/EliminarConfirmado
+        [AdminOnly]
         [HttpPost, ActionName("EliminarConfirmado")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EliminarConfirmado(int IdProducto)

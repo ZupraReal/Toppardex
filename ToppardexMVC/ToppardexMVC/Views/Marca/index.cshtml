@@ -1,13 +1,19 @@
+@using Topardex
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @model IEnumerable<Topardex.Marca>
 @{
     ViewData["Title"] = "Marcas";
+    var rol = HttpContextAccessor.HttpContext.Session.GetString("Rol");
 }
 
 <h1 class="mb-4">Listado de Marcas</h1>
 
-<a href="/Marca/Crear" class="btn btn-primary mb-3">+ Nueva Marca</a>
+@if (rol == "Admin")
+{
+    <a href="/Marca/Crear" class="btn btn-success mb-3">+ Nueva Marca</a>
+}
 
-<table class="table table-striped">
+<table class="table table-striped table-hover shadow-sm">
     <thead class="table-dark">
         <tr>
             <th>ID</th>
@@ -22,9 +28,13 @@
                 <td>@marca.IdMarca</td>
                 <td>@marca.Nombre</td>
                 <td>
-                    <a href="/Marca/Detalle/@marca.IdMarca" class="btn btn-info btn-sm">Ver</a>
-                    <a href="/Marca/Editar/@marca.IdMarca" class="btn btn-warning btn-sm">Editar</a>
-                    <a href="/Marca/Eliminar/@marca.IdMarca" class="btn btn-danger btn-sm">Eliminar</a>
+                    <a href="/Marca/Detalle/@marca.IdMarca" class="btn btn-info btn-sm me-1">Ver</a>
+
+                    @if (rol == "Admin")
+                    {
+                        <a href="/Marca/Editar/@marca.IdMarca" class="btn btn-warning btn-sm me-1">Editar</a>
+                        <a href="/Marca/Eliminar/@marca.IdMarca" class="btn btn-danger btn-sm">Eliminar</a>
+                    }
                 </td>
             </tr>
         }

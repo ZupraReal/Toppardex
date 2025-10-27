@@ -1,8 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Inicio";
+    ViewData["Title"] = "Inicio de sesión";
 }
-<div class="text-center mt-5">
-    <h1 class="display-4">Bienvenido a Toppardex</h1>
-    <p class="lead">Gestión simple y rápida de Clientes, Productos y Pedidos.</p>
-    <a href="/Cliente" class="btn btn-primary btn-lg mt-3">Ver Clientes</a>
-</div>
+
+<h2 class="text-center mb-4">Iniciar Sesión</h2>
+
+<form method="post" class="w-50 mx-auto border p-4 rounded shadow">
+    <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" name="email" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Contraseña:</label>
+        <input type="password" name="pass" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+
+    @if (ViewBag.Error != null)
+    {
+        <p class="text-danger text-center mt-2">@ViewBag.Error</p>
+    }
+</form>

@@ -21,6 +21,20 @@ builder.Services.AddScoped<IRepoCliente, RepoCliente>();
 builder.Services.AddScoped<IRepoProducto, RepoProducto>();
 builder.Services.AddScoped<IRepoMarca, RepoMarca>();
 builder.Services.AddScoped<IRepoPedido, RepoPedido>();
+// Después de builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor(); // <--- esto registra IHttpContextAccessor
+
+
+// ------------------ SESIÓN ------------------
+// Permite usar HttpContext.Session en los controladores
+builder.Services.AddDistributedMemoryCache(); // almacenamiento en memoria para sesión
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // tiempo de expiración
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+// --------------------------------------------
 
 var app = builder.Build();
 
@@ -34,6 +48,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+
+app.UseSession(); // <- Middleware de sesión
 app.UseAuthorization();
 
 // Ruta por defecto

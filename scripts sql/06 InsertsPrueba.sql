@@ -68,3 +68,8 @@ VALUES (@pedido, 1, 100, 2),
 -- Verificar el total actualizado
 SELECT * FROM Pedido WHERE idPedido = @pedido;
 */
+
+INSERT INTO Usuario (email, pass, rol)
+VALUES 
+('admin@empresa.com', SHA2('admin123', 256), 'Admin'),
+('empleado@empresa.com', SHA2('empleado123', 256), 'Empleado');

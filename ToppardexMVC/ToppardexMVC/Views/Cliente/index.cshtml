@@ -1,12 +1,20 @@
 @using Topardex
+@using Microsoft.AspNetCore.Http
 @model IEnumerable<Cliente>
 @{
     ViewData["Title"] = "Clientes";
+    var rol = Context.Session.GetString("Rol");
 }
-<h2>Clientes</h2>
-<a href="/Cliente/Crear" class="btn btn-primary mb-3">Nuevo Cliente</a>
+}
 
-<table class="table table-bordered table-striped">
+<h2>Clientes</h2>
+
+@if (rol == "Admin")
+{
+    <a href="/Cliente/Crear" class="btn btn-success mb-3">+ Nuevo Cliente</a>
+}
+
+<table class="table table-bordered table-striped shadow-sm">
     <thead class="table-dark">
         <tr>
             <th>ID</th>
@@ -14,7 +22,7 @@
             <th>Apellido</th>
             <th>País</th>
             <th>Fecha de Nacimiento</th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -26,8 +34,21 @@
                 <td>@c.Apellido</td>
                 <td>@c.Pais</td>
                 <td>@c.FechaDeNacimiento.ToShortDateString()</td>
-                <td><a href="/Cliente/Detalle/@c.IdCliente" class="btn btn-sm btn-info">Ver</a></td>
+                <td>
+                    <a href="/Cliente/Detalle/@c.IdCliente" class="btn btn-info btn-sm me-1">Ver</a>
+
+                    @if (rol == "Admin")
+                    {
+                        <a href="/Cliente/Editar/@c.IdCliente" class="btn btn-warning btn-sm me-1">Editar</a>
+                        <a href="/Cliente/Eliminar/@c.IdCliente" class="btn btn-danger btn-sm">Eliminar</a>
+                    }
+                </td>
             </tr>
         }
     </tbody>
 </table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info mt-3">No hay clientes cargados.</div>
+}

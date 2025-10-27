@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdoDapper.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47625626cbf5a8b30199baf365b9ee4ccf0f4c87")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e166cc357a3917775019276902a97fe87906a835")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdoDapper.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdoDapper.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

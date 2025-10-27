@@ -30,12 +30,14 @@ namespace Topardex.top.Controllers
         }
 
         // GET: /Cliente/Crear
+        [AdminOnly]
         public IActionResult Crear()
         {
             return View();
         }
 
         // POST: /Cliente/Crear
+        [AdminOnly]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(Cliente cliente)
