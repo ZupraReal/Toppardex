@@ -33,6 +33,7 @@ namespace Topardex.top.Controllers
         }
 
         // GET: /Pedido/Crear
+
         public async Task<IActionResult> Crear()
         {
             ViewBag.Productos = await _repoProducto.ObtenerAsync();
@@ -98,7 +99,7 @@ namespace Topardex.top.Controllers
 
             if (pedido == null)
             {
-                ViewBag.Mensaje = "No se encontró ningún pedido con ese ID.";
+                TempData["MensajeError"] = "No se encontró ningún pedido con ese ID.";
                 return View();
             }
 

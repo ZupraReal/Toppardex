@@ -40,10 +40,11 @@ namespace Topardex.top.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(Cliente cliente)
         {
+            // Validación de números
             if (ContieneNumeros(cliente.Nombre) || ContieneNumeros(cliente.Apellido) || ContieneNumeros(cliente.Pais))
             {
-                ViewBag.Error = "Nombre, Apellido y País no deben contener números.";
-                return View(cliente);
+                TempData["MensajeError"] = "Nombre, Apellido y País no deben contener números.";
+                return RedirectToAction("Crear"); // Redirige a la vista de creación con mensaje
             }
 
             if (!ModelState.IsValid)
@@ -59,8 +60,9 @@ namespace Topardex.top.Controllers
                 TempData["MensajeError"] = "Ocurrió un error al crear el cliente.";
             }
 
-            return RedirectToAction("index", "cliente");
+            return RedirectToAction("Index", "Cliente");
         }
+
 
         // 🔹 GET: /Cliente/Editar/5
         public async Task<IActionResult> Editar(int id)
@@ -79,7 +81,7 @@ namespace Topardex.top.Controllers
         {
             if (ContieneNumeros(cliente.Nombre) || ContieneNumeros(cliente.Apellido) || ContieneNumeros(cliente.Pais))
             {
-                ViewBag.Error = "Nombre, Apellido y País no deben contener números.";
+                TempData["MensajeError"] = "Nombre, Apellido y País no deben contener números.";
                 return View(cliente);
             }
 

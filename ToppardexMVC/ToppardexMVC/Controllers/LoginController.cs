@@ -43,7 +43,7 @@ namespace ToppardexMVC.Controllers
                 return RedirectToAction("Bienvenida", "Home");
             }
 
-            ViewBag.Error = "Usuario o contraseña incorrectos.";
+            TempData["MensajeError"] = "Usuario o contraseña incorrectos.";
             return View();
         }
 

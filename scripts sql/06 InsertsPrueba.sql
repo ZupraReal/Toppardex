@@ -20,23 +20,23 @@ INSERT INTO Marca (nombre) VALUES
 /*Usuarios*/
 CALL AltaCliente('Judas', 'Pin', 'Argentina', '2007-03-15');
 CALL AltaCliente('Facundo', 'Perez', 'Argentina', '2006-09-02');
-CALL AltaCliente('Maria', 'Lopez', 'España', '1985-11-20');
+CALL AltaCliente('Maria', 'Lopez', 'Espana', '1985-11-20');
 CALL AltaCliente('Carlos', 'Gomez', 'Mexico', '1992-05-10');
-CALL AltaCliente('Ana', 'Rodríguez', 'Colombia', '1978-01-25');
-CALL AltaCliente('Javier', 'Sánchez', 'Argentina', '2000-08-12');
-CALL AltaCliente('Sofia', 'Martínez', 'Chile', '1995-04-03');
-CALL AltaCliente('Miguel', 'Fernández', 'Perú', '1980-07-18');
-CALL AltaCliente('Lucia', 'Díaz', 'Uruguay', '2003-12-01');
-CALL AltaCliente('Pedro', 'Alvarez', 'España', '1965-06-30');
+CALL AltaCliente('Ana', 'Rodriguez', 'Colombia', '1978-01-25');
+CALL AltaCliente('Javier', 'Sanchez', 'Argentina', '2000-08-12');
+CALL AltaCliente('Sofia', 'Martinez', 'Chile', '1995-04-03');
+CALL AltaCliente('Miguel', 'Fernandez', 'Peru', '1980-07-18');
+CALL AltaCliente('Lucia', 'Diaz', 'Uruguay', '2003-12-01');
+CALL AltaCliente('Pedro', 'Alvarez', 'Espana', '1965-06-30');
 CALL AltaCliente('Elena', 'Vargas', 'Mexico', '1998-02-14');
 CALL AltaCliente('Ricardo', 'Flores', 'Ecuador', '1970-10-05');
 CALL AltaCliente('Paula', 'Torres', 'Argentina', '2001-03-22');
 CALL AltaCliente('Andres', 'Ruiz', 'Colombia', '1988-09-09');
-CALL AltaCliente('Valentina', 'Mendez', 'Perú', '2005-01-28');
+CALL AltaCliente('Valentina', 'Mendez', 'Peru', '2005-01-28');
 
 -- Productos de Ardidas
 CALL AltaProducto('Ultraboost 22', 180.00, 45, 1);
-CALL AltaProducto('Gazelle Clásica', 85.50, 60, 1);
+CALL AltaProducto('Gazelle Clasica', 85.50, 60, 1);
 
 -- Productos de Converse
 CALL AltaProducto('Chuck Taylor All Star', 75.00, 100, 2);

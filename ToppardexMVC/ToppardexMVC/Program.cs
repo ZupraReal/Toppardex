@@ -22,6 +22,10 @@ builder.Services.AddScoped<IRepoProducto, RepoProducto>();
 builder.Services.AddScoped<IRepoMarca, RepoMarca>();
 builder.Services.AddScoped<IRepoPedido, RepoPedido>();
 
+builder.Services.AddScoped<IDbConnection>(sp =>
+    new MySqlConnection(builder.Configuration.GetConnectionString("MySql") + ";CharSet=utf8mb4;"));
+
+
 // Registro de IHttpContextAccessor
 builder.Services.AddHttpContextAccessor();
 

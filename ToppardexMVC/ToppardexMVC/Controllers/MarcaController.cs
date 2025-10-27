@@ -82,6 +82,7 @@ namespace Topardex.top.Controllers
         {
             var marca = await _repoMarca.DetalleAsync(id);
             if (marca == null)
+                
                 return NotFound();
 
             return View(marca);
