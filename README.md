@@ -13,20 +13,22 @@
 
 **Administración y Gestion de Base de Datos**
 
-**Toppardex**: <!-- REEMPLAZA este comentario por el nombre del TP -->
+**Toppardex**: 
 
-**Judas Pinaya, Zaid Sihuinta y Facundo Oviedo**: <!-- REEMPLAZA este comentario por tu apellido y nombre -->
+**Judas Pinaya, Zaid Sihuinta y Facundo Oviedo**:
 
-**5to 8va**: <!-- REEMPLAZA este comentario por tu curso -->
-
+**5to 8va**: 
 # Toppardex
 
 _Nuestra base de datos trata de ayudar con la administracion y clasificacion de zapatillas en una tienda._
+_Desarrollado con el patron MVC (Model-View-Controller) en - .ASP.NET Core - y con una base de datos MySQL_ 
 
 
 ### Pre-requisitos 📋
 
 - .NET 8.0 (SDK .NET 8.0.100) - [Descargar](https://dotnet.microsoft.com/download/dotnet/8.0)
+
+- .MySQL (Workbrench ) -
 
 ## Despliegue 📦
 
