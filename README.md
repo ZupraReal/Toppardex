@@ -15,20 +15,16 @@
 
 **Toppardex**
 
-**5to 8va** 
+**5to 8va**
+
 # Toppardex
 
-_Nuestra base de datos trata de ayudar con la administracion y clasificacion de zapatillas en una tienda._
-_Desarrollado con el patron MVC (Model-View-Controller) en .ASP.NET Core y con una base de datos MySQL_ 
-_Su objetivo es gestionar los productos de la empreza, permitiendo administrar:_ 
+_Toppardex es una aplicacion web desarrollada con el patron MVC en ASP.NET Core y con una base de datos MySQL. Su objetivo es gestionar los productos de la empresa, permitiendo administrar:_
+- Clientes
+- Productos
+- Marcas
+- Pedidos
 
-- **Clientes**
-
-- **Productos**
-
-- **Marcas**
-
-- **Pedidos**
 
 ### Pre-requisitos 📋
 
@@ -38,7 +34,6 @@ _Su objetivo es gestionar los productos de la empreza, permitiendo administrar:_
 
 - .Visual Studio Code - [Descargar](https://code.visualstudio.com/download)
 
-
 ## Desarrollado con 🛠️
 
 - Visual Studio Code - Editor de Codigo
@@ -46,8 +41,8 @@ _Su objetivo es gestionar los productos de la empreza, permitiendo administrar:_
 ## Autores ✒️
 
 - Judas Pinaya - _Desarrollo_ 
-- Zaid Sihuinta - _Desarrollo_ 
-- Facundo Oviedo - _Desarrollo_ 
+- Zaid Sihuinta - _Desarrollo_
+- Facundo Oviedo - _Desarrollo_
 
 ## Despliegue 📦
 
