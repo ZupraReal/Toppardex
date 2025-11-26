@@ -8,12 +8,11 @@ Clientes{
    varchar(45) nombre
    varchar(45) apellido
    varchar(45) pais
-   date fechaDeNacimiento
+   fechaDeNacimiento date 
 }
 
 
 Marca{
- 
    SMALLINTUNSIGNED idMarca PK
    varchar(45) nombre
 }
@@ -28,36 +27,23 @@ Producto{
 }
 
 
-Pedidos{
+Pedido{
    SMALLINTUNSIGNED idPedido PK
    SMALLINTUNSIGNED idCliente FK
    DATETIME fechaventa
+   DECIMAL(10_2) total 
 }
-
-
-Talle{
-   SMALLINTUNSIGNED idProducto PK, FK
-   TINYINTUNSIGNED numerotalle PK
-   SMALLINTUNSIGNED cantidadtalle
-  
-}
-
 
 ProductoPedidos{
    SMALLINTUNSIGNED idPedido PK, FK
    SMALLINTUNSIGNED idProducto PK, FK
    DECIMAL(10_2) precio
    SMALLINTUNSIGNED cantidad
-   TINYINTUNSIGNED numerotalle PK, FK
 }
 
-
-
-
-Clientes||--|{Pedidos : ""
-Pedidos||--|{ProductoPedidos: ""
+Clientes||--|{Pedido : ""
+Pedido||--|{ProductoPedidos: ""
 ProductoPedidos}|--||Producto :""
-Talle ||--|{Producto : ""
-Marca ||--|{Producto: ""
+Producto}|--||Marca :""
 
 ```
