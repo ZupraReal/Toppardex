@@ -13,24 +13,43 @@
 
 **Administración y Gestion de Base de Datos**
 
-**Toppardex**: <!-- REEMPLAZA este comentario por el nombre del TP -->
+**Toppardex**
 
-**Judas Pinaya, Zaid Sihuinta y Facundo Oviedo**: <!-- REEMPLAZA este comentario por tu apellido y nombre -->
-
-**5to 8va**: <!-- REEMPLAZA este comentario por tu curso -->
+**5to 8va**
 
 # Toppardex
 
-_Nuestra base de datos trata de ayudar con la administracion y clasificacion de zapatillas en una tienda._
+_Toppardex es una aplicacion web desarrollada con el patron MVC en ASP.NET Core y con una base de datos MySQL. Su objetivo es gestionar los productos de la empresa, permitiendo administrar:_
+- Clientes
+- Productos
+- Marcas
+- Pedidos
 
 
 ### Pre-requisitos 📋
 
 - .NET 8.0 (SDK .NET 8.0.100) - [Descargar](https://dotnet.microsoft.com/download/dotnet/8.0)
 
+- .MySQL (Workbrench) - [Descargar](https://dev.mysql.com/downloads/workbench/)
+
+- .Visual Studio Code - [Descargar](https://code.visualstudio.com/download)
+
+## Desarrollado con 🛠️
+
+- Visual Studio Code - Editor de Codigo
+
+## Autores ✒️
+
+- Judas Pinaya - _Desarrollo_ 
+- Zaid Sihuinta - _Desarrollo_
+- Facundo Oviedo - _Desarrollo_
+
 ## Despliegue 📦
 
-1. ir al a carpeta tal
-1. ejecutar el comando blabla
-1. ya en la consola, tipiear: lkfhwhf
-1. ir a la carpeta del proyecto y correr los test con:
+1. Abrir el "Administrador de Tareas" e Iniciar "MySQL80".
+2. Abrir "MySQL Workbrench" y ejecutar la Base de Datos.
+3. Ir al a carpeta ToppardexMVC.
+4. Abrir la consola y ejecutar el comando "mysql -u root -p", poner como password "root", y luego ejecutar "source Install.sql".
+5. Seleccionar como perfil (Csharp Full).
+6. Ir al Menu > Solution.
+7. Elegir ToppardexMVC, darle click derecho y elegir "Watch run".

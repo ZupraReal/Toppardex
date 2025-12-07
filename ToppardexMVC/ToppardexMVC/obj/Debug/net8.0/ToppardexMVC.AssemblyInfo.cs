@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToppardexMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80e81bc9de685137bbd67e4a0f32ce26c287210d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2e1375a906adf6acecd40f33ed022e61d15c099")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToppardexMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToppardexMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
