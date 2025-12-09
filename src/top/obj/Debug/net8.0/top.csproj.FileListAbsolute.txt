@@ -33,3 +33,15 @@ c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\src\top\obj\Debug\net8.0
 c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\src\top\obj\Debug\net8.0\refint\top.dll
 c:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\src\top\obj\Debug\net8.0\top.pdb
 C:\Users\Usuario\OneDrive\Documentos\GitHub\1\Toppardex\src\top\obj\Debug\net8.0\ref\top.dll
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\bin\Debug\net8.0\top.deps.json
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\bin\Debug\net8.0\top.dll
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\bin\Debug\net8.0\top.pdb
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.AssemblyInfoInputs.cache
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.AssemblyInfo.cs
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.csproj.CoreCompileInputs.cache
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.sourcelink.json
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.dll
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\refint\top.dll
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\top.pdb
+C:\Users\Zupra\Documents\GitHub\Toppardex\src\top\obj\Debug\net8.0\ref\top.dll

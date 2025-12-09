@@ -49,7 +49,8 @@ _Toppardex es una aplicacion web desarrollada con el patron MVC en ASP.NET Core 
 1. Abrir el "Administrador de Tareas" e Iniciar "MySQL80".
 2. Abrir "MySQL Workbrench" y ejecutar la Base de Datos.
 3. Ir al a carpeta ToppardexMVC.
-4. Abrir la consola y ejecutar el comando "mysql -u root -p", poner como password "root", y luego ejecutar "source Install.sql".
-5. Seleccionar como perfil (Csharp Full).
-6. Ir al Menu > Solution.
-7. Elegir ToppardexMVC, darle click derecho y elegir "Watch run".
+4. Abrir la consola y ejecutar el comando "mysql -u root -p", poner como password "root"
+5. Abrir una nueva consola, ir a la carpeta scripts sql y luego ejecutar "source Install.sql".
+6. Seleccionar como perfil (Csharp Full).
+7. Ir al Menu > Solution.
+8. Elegir ToppardexMVC, darle click derecho y elegir "Watch run".
