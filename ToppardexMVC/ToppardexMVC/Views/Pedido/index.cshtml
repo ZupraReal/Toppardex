@@ -34,7 +34,7 @@
             {
                 <tr>
                     <td>@pedido.IdPedido</td>
-                    <td>@pedido.IdCliente</td>
+                    <td>@(pedido.Cliente != null ? pedido.Cliente.Nombre + " " + pedido.Cliente.Apellido : pedido.IdCliente.ToString())</td>
                     <td>@(pedido.FechaVenta.HasValue ? pedido.FechaVenta.Value.ToString("dd/MM/yyyy") : "-")</td>
                     <td>$@pedido.Total</td>
                     <td>

@@ -83,6 +83,16 @@ public class RepoPedido : RepoGenerico, IRepoPedido
 
         foreach (var pedido in pedidos)
         {
+            // Cargar cliente
+            var cliente = await Conexion.QuerySingleOrDefaultAsync<Topardex.Cliente>(
+                @"SELECT IdCliente, Nombre, Apellido, Pais, FechaDeNacimiento 
+                  FROM Cliente 
+                  WHERE IdCliente = @idCliente",
+                new { idCliente = pedido.IdCliente }
+            );
+            pedido.Cliente = cliente;
+
+            // Cargar productos
             var productos = await Conexion.QueryAsync<ProductoPedido>(
                 @"SELECT 
                     pp.idProducto AS IdProducto,
@@ -111,6 +121,15 @@ public class RepoPedido : RepoGenerico, IRepoPedido
 
         if (pedido == null)
             return null;
+
+        // Cargar datos del cliente asociado
+        var cliente = await Conexion.QuerySingleOrDefaultAsync<Topardex.Cliente>(
+            @"SELECT IdCliente, Nombre, Apellido, Pais, FechaDeNacimiento 
+            FROM Cliente 
+            WHERE IdCliente = @idCliente",
+            new { idCliente = pedido.IdCliente }
+        );
+        pedido.Cliente = cliente;
 
         var productos = await Conexion.QueryAsync<ProductoPedido>(
             @"SELECT 

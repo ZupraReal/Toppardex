@@ -18,138 +18,138 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = c:\Users\Lab15-PC01\Documents\GitHub\Toppardex\ToppardexMVC\ToppardexMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/crear.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/crear.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxjcmVhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/detalle.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/detalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxkZXRhbGxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/Editar.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/Eliminar.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/Eliminar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFbGltaW5hci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/index.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Cliente/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/AccesoDenegado.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/AccesoDenegado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2Nlc29EZW5lZ2Fkby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/AcercaDe.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/AcercaDe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBY2VyY2FEZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Bienvenida.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Bienvenida.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCaWVudmVuaWRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Contacto.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Contacto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Index.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Privacy.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Login/Bienvenida.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Login/Bienvenida.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQmllbnZlbmlkYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Login/index.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Login/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5caW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/crear.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/crear.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcY3JlYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/detalle.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/detalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcZGV0YWxsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/editar.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcZWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/eliminar.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/eliminar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcZWxpbWluYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/index.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Marca/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/Buscar.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/Buscar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEJ1c2Nhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/BuscarPorID.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/BuscarPorID.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEJ1c2NhclBvcklELmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/crear.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/crear.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXGNyZWFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/detalle.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/detalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXGRldGFsbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/index.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/ResultadoBusqueda.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Pedido/ResultadoBusqueda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFJlc3VsdGFkb0J1c3F1ZWRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/Crear.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/Crear.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ3JlYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/detalle.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/detalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cZGV0YWxsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/editar.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cZWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/eliminar.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/eliminar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cZWxpbWluYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/index.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Producto/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9caW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Shared/Error.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/_ViewImports.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/_ViewStart.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Shared/_Layout.cshtml]
+[c:/Users/Lab15-PC01/Documents/GitHub/Toppardex/ToppardexMVC/ToppardexMVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-nir4ybo6xo

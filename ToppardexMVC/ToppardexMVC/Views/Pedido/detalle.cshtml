@@ -10,7 +10,7 @@
 <div class="card shadow">
     <div class="card-body">
         <p><strong>ID:</strong> @Model.IdPedido</p>
-        <p><strong>Cliente:</strong> @Model.IdCliente</p>
+        <p><strong>Cliente:</strong> @(Model.Cliente != null ? Model.Cliente.Nombre + " " + Model.Cliente.Apellido : Model.IdCliente.ToString())</p>
         <p><strong>Fecha:</strong> @(Model.FechaVenta.HasValue ? Model.FechaVenta.Value.ToString("dd/MM/yyyy HH:mm") : "-")</p>
         <p><strong>Total:</strong> $@Model.Total</p>
 
