@@ -8,24 +8,32 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Zupra\\.nuget\\packages\\": {}
+    "C:\\Users\\Lab15-PC01\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj",
+      "projectUniqueName": "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj",
       "projectName": "top",
-      "projectPath": "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj",
-      "packagesPath": "C:\\Users\\Zupra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\obj\\",
+      "projectPath": "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj",
+      "packagesPath": "C:\\Users\\Lab15-PC01\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\Lab15-PC01\\Documents\\GitHub\\Toppardex\\src\\top\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Zupra\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Lab15-PC01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

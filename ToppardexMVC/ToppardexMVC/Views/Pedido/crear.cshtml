@@ -9,8 +9,14 @@
 
 <form asp-action="Crear" method="post">
     <div class="mb-3">
-        <label>Cliente Id:</label>
-        <input type="number" asp-for="IdCliente" class="form-control" required />
+        <label>Cliente:</label>
+        <select asp-for="IdCliente" class="form-select" required>
+            <option value="">-- Seleccionar cliente --</option>
+            @foreach (var c in (IEnumerable<Cliente>)ViewBag.Clientes)
+            {
+                <option value="@c.IdCliente">@c.Nombre @c.Apellido</option>
+            }
+        </select>
     </div>
 
     <h4>Productos</h4>

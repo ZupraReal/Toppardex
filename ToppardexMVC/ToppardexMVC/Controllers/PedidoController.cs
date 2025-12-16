@@ -8,11 +8,13 @@ namespace Topardex.top.Controllers
     {
         private readonly IRepoPedido _repoPedido;
         private readonly IRepoProducto _repoProducto;
+        private readonly IRepoCliente _repoCliente;
 
-        public PedidoController(IRepoPedido repoPedido, IRepoProducto repoProducto)
+        public PedidoController(IRepoPedido repoPedido, IRepoProducto repoProducto, IRepoCliente repoCliente)
         {
             _repoPedido = repoPedido;
             _repoProducto = repoProducto;
+            _repoCliente = repoCliente;
         }
 
         // GET: /Pedido
@@ -37,6 +39,7 @@ namespace Topardex.top.Controllers
         public async Task<IActionResult> Crear()
         {
             ViewBag.Productos = await _repoProducto.ObtenerAsync();
+            ViewBag.Clientes = await _repoCliente.ObtenerAsync();
             return View();
         }
 
@@ -52,6 +55,7 @@ namespace Topardex.top.Controllers
             {
                 ModelState.AddModelError("", "Debe agregar al menos un producto al pedido.");
                 ViewBag.Productos = await _repoProducto.ObtenerAsync();
+                ViewBag.Clientes = await _repoCliente.ObtenerAsync();
                 return View(pedido);
             }
 
