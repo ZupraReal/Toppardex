@@ -26,14 +26,42 @@ public class RepoProducto : RepoGenerico, IRepoProducto
 
     public async Task<IEnumerable<Producto>> ObtenerAsync()
     {
-        return await Conexion.QueryAsync<Producto>("SELECT * FROM Producto");
+        var sql = @"SELECT p.IdProducto, p.Nombre, p.Precio, p.Stock, p.IdMarca, m.IdMarca,m.Nombre
+                FROM Producto p
+                INNER JOIN Marca m ON m.IdMarca = p.IdMarca";
+
+        var productos = await Conexion.QueryAsync<Producto, Marca, Producto>(
+            sql,
+            (prod, marca) =>
+            {
+                prod.Marca = marca;
+                return prod;
+            },
+            splitOn: "IdMarca"
+        );
+
+        return productos;
     }
 
     public async Task<Producto?> DetalleAsync(int id)
     {
-        return await Conexion.QueryFirstOrDefaultAsync<Producto>(
-            "SELECT * FROM Producto WHERE IdProducto = @id",
-            new { id });
+        var sql = @"SELECT p.IdProducto, p.Nombre, p.Precio, p.Stock, p.IdMarca, m.IdMarca, m.Nombre
+            FROM Producto p
+            INNER JOIN Marca m ON m.IdMarca = p.IdMarca
+            WHERE p.IdProducto = @id";
+
+        var productos = await Conexion.QueryAsync<Producto, Marca, Producto>(
+            sql,
+            (prod, marca) =>
+            {
+                prod.Marca = marca;
+                return prod;
+            },
+            new { id },
+            splitOn: "IdMarca"
+        );
+
+        return productos.FirstOrDefault();
     }
 
     public async Task<IEnumerable<Producto>> ObtenerPorMarcaAsync(int idMarca)
