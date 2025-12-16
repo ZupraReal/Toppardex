@@ -63,7 +63,7 @@ SET @pedido := LAST_INSERT_ID();
 -- Insertar productos
 INSERT INTO ProductoPedidos (idPedido, idProducto, precio, cantidad)
 VALUES (@pedido, 1, 100, 2),
-       (@pedido, 2, 200, 1);
+    (@pedido, 2, 200, 1);
 
 -- Verificar el total actualizado
 SELECT * FROM Pedido WHERE idPedido = @pedido;

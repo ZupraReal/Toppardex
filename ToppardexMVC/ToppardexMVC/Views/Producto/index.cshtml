@@ -5,6 +5,9 @@
 @{
     ViewData["Title"] = "Lista de Productos";
     var rol = HttpContextAccessor.HttpContext.Session.GetString("Rol");
+
+    // Recuperamos el diccionario de Marcas
+    var diccionarioMarcas = ViewBag.NombresMarcas as Dictionary<int, string>;
 }
 
 <h1 class="mb-4">Productos</h1>
@@ -33,20 +36,25 @@
                 <td>@p.Nombre</td>
                 <td>$@p.Precio</td>
                 <td>@p.Stock</td>
-                <td>@p.IdMarca</td>
-                <td class="text-center">
-                    <a asp-action="Detalle" asp-route-id="@p.IdProducto" class="btn btn-info btn-sm me-1">
-                        <i class="bi bi-eye"></i> Ver
-                    </a>
+                
+                <td>
+                    @if (diccionarioMarcas != null && diccionarioMarcas.ContainsKey(p.IdMarca))
+                    {
+                        @diccionarioMarcas[p.IdMarca]
+                    }
+                    else
+                    {
+                        <span>ID: @p.IdMarca</span>
+                    }
+                </td>
 
+                <td class="text-center">
+                    <a asp-action="Detalle" asp-route-id="@p.IdProducto" class="btn btn-info btn-sm me-1">Ver</a>
+                    
                     @if (rol == "Admin")
                     {
-                        <a asp-action="Editar" asp-route-id="@p.IdProducto" class="btn btn-warning btn-sm me-1">
-                            <i class="bi bi-pencil"></i> Editar
-                        </a>
-                        <a asp-action="Eliminar" asp-route-id="@p.IdProducto" class="btn btn-danger btn-sm">
-                            <i class="bi bi-trash"></i> Eliminar
-                        </a>
+                        <a asp-action="Editar" asp-route-id="@p.IdProducto" class="btn btn-warning btn-sm me-1">Editar</a>
+                        <a asp-action="Eliminar" asp-route-id="@p.IdProducto" class="btn btn-danger btn-sm">Eliminar</a>
                     }
                 </td>
             </tr>

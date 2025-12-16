@@ -5,6 +5,8 @@
 @{
     ViewData["Title"] = "Pedidos";
     var rol = HttpContextAccessor.HttpContext.Session.GetString("Rol");
+
+    var diccionarioNombres = ViewBag.NombresClientes as Dictionary<int, string>;
 }
 
 <h1 class="mb-4">Listado de Pedidos</h1>
@@ -34,19 +36,24 @@
             {
                 <tr>
                     <td>@pedido.IdPedido</td>
-                    <td>@pedido.IdCliente</td>
+                    
+                    <td>
+                        @if (diccionarioNombres != null && diccionarioNombres.ContainsKey(pedido.IdCliente))
+                        {
+                            @diccionarioNombres[pedido.IdCliente]
+                        }
+                        else
+                        {
+                            <span>ID: @pedido.IdCliente</span>
+                        }
+                    </td>
+
                     <td>@(pedido.FechaVenta.HasValue ? pedido.FechaVenta.Value.ToString("dd/MM/yyyy") : "-")</td>
                     <td>$@pedido.Total</td>
                     <td>
                         <a href="/Pedido/Detalle/@pedido.IdPedido" class="btn btn-info btn-sm me-1">Ver</a>
                         
-                        @* Si en el futuro quieres editar o eliminar pedidos solo para Admin, se podría agregar aquí *@
-                        @* Ejemplo:
-                        @if (rol == "Admin")
-                        {
-                            <a href="/Pedido/Editar/@pedido.IdPedido" class="btn btn-warning btn-sm me-1">Editar</a>
-                            <a href="/Pedido/Eliminar/@pedido.IdPedido" class="btn btn-danger btn-sm">Eliminar</a>
-                        }*@
+                        
                     </td>
                 </tr>
             }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Topardex.Ado.Dapper;
 using Topardex.top.Persistencia;
+using Topardex; 
 
 namespace Topardex.top.Controllers
 {
@@ -8,17 +9,26 @@ namespace Topardex.top.Controllers
     {
         private readonly IRepoPedido _repoPedido;
         private readonly IRepoProducto _repoProducto;
+        private readonly IRepoCliente _repoCliente; 
 
-        public PedidoController(IRepoPedido repoPedido, IRepoProducto repoProducto)
+        public PedidoController(IRepoPedido repoPedido, IRepoProducto repoProducto, IRepoCliente repoCliente)
         {
             _repoPedido = repoPedido;
             _repoProducto = repoProducto;
+            _repoCliente = repoCliente; 
         }
 
         // GET: /Pedido
         public async Task<IActionResult> Index()
         {
             var pedidos = await _repoPedido.ObtenerAsync();
+            var clientes = await _repoCliente.ObtenerAsync();
+
+            ViewBag.NombresClientes = clientes.ToDictionary(
+                k => k.IdCliente, 
+                v => $"{v.Nombre} {v.Apellido}"
+            );
+
             return View(pedidos);
         }
 
@@ -26,17 +36,19 @@ namespace Topardex.top.Controllers
         public async Task<IActionResult> Detalle(int id)
         {
             var pedido = await _repoPedido.DetalleAsync(id);
-            if (pedido == null)
-                return NotFound();
+            if (pedido == null) return NotFound();
+
+            var cliente = await _repoCliente.DetalleAsync(pedido.IdCliente);
+            ViewBag.NombreCliente = cliente != null ? $"{cliente.Nombre} {cliente.Apellido}" : $"ID: {pedido.IdCliente}";
 
             return View(pedido);
         }
 
         // GET: /Pedido/Crear
-
         public async Task<IActionResult> Crear()
         {
             ViewBag.Productos = await _repoProducto.ObtenerAsync();
+            ViewBag.Clientes = await _repoCliente.ObtenerAsync(); 
             return View();
         }
 
@@ -45,68 +57,66 @@ namespace Topardex.top.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Crear(Pedido pedido)
         {
-            Console.WriteLine($"IdCliente: {pedido.IdCliente}");
-            Console.WriteLine($"Productos count: {pedido.Productos?.Count ?? 0}");
-
+            // 1. Validar lista vacía
             if (pedido.Productos == null || pedido.Productos.Count == 0)
             {
-                ModelState.AddModelError("", "Debe agregar al menos un producto al pedido.");
+                TempData["MensajeError"] = "⚠ El pedido debe tener al menos un producto.";
+                
                 ViewBag.Productos = await _repoProducto.ObtenerAsync();
+                ViewBag.Clientes = await _repoCliente.ObtenerAsync(); 
                 return View(pedido);
             }
 
-            foreach (var p in pedido.Productos)
+            // 2. VALIDACIÓN DE STOCK
+            foreach (var item in pedido.Productos)
             {
-                Console.WriteLine($"Producto: {p.IdProducto}, Cantidad: {p.Cantidad}, Precio: {p.PrecioUnitario}");
+                var productoEnBd = await _repoProducto.DetalleAsync(item.IdProducto);
+
+                if (item.Cantidad > productoEnBd.Stock)
+                {
+                    // Usamos TempData para asegurar que la alerta se vea
+                    TempData["MensajeError"] = $"⛔ STOCK INSUFICIENTE: '{productoEnBd.Nombre}' tiene {productoEnBd.Stock} u., pediste {item.Cantidad}.";
+                    
+                    // Recargamos listas
+                    ViewBag.Productos = await _repoProducto.ObtenerAsync();
+                    ViewBag.Clientes = await _repoCliente.ObtenerAsync(); 
+                    
+                    // Devolvemos lo que el usuario escribió para no borrarle todo
+                    return View(pedido);
+                }
             }
 
+            // 3. Guardar
             var pedidoCreado = await _repoPedido.AltaPedidoAsync(pedido);
-
             return RedirectToAction(nameof(Detalle), new { id = pedidoCreado.IdPedido });
         }
 
-        // GET: /Pedido/Buscar
-        public IActionResult Buscar()
-        {
-            return View();
-        }
+        public IActionResult Buscar() { return View(); }
 
-        // POST: /Pedido/Buscar
         [HttpPost]
         public async Task<IActionResult> Buscar(int idCliente)
         {
             var pedidos = await _repoPedido.ObtenerPorClienteAsync(idCliente);
-
-            if (!pedidos.Any())
-            {
-                ViewBag.Mensaje = "No se encontraron pedidos para este cliente.";
-            }
-
+            if (!pedidos.Any()) ViewBag.Mensaje = "No se encontraron pedidos.";
             return View("ResultadoBusqueda", pedidos);
         }
 
-        // GET: /Pedido/BuscarPorId
-        public IActionResult BuscarPorId()
-        {
-            return View();
-        }
+        public IActionResult BuscarPorId() { return View(); }
 
-        // POST: /Pedido/BuscarPorId
         [HttpPost]
         public async Task<IActionResult> BuscarPorId(int idPedido)
         {
             var pedido = await _repoPedido.DetalleAsync(idPedido);
-
-            if (pedido == null)
-            {
-                TempData["MensajeError"] = "No se encontró ningún pedido con ese ID.";
-                return View();
+            if (pedido == null) 
+            { 
+                TempData["MensajeError"] = "No encontrado."; 
+                return View(); 
             }
 
-            // Reutilizamos la vista Detalle
+            var cliente = await _repoCliente.DetalleAsync(pedido.IdCliente);
+            ViewBag.NombreCliente = cliente != null ? $"{cliente.Nombre} {cliente.Apellido}" : $"ID: {pedido.IdCliente}";
+            
             return View("Detalle", pedido);
         }
-
-
     }
 }

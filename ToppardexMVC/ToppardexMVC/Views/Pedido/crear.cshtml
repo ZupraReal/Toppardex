@@ -9,9 +9,18 @@
 
 <form asp-action="Crear" method="post">
     <div class="mb-3">
-        <label>Cliente Id:</label>
-        <input type="number" asp-for="IdCliente" class="form-control" required />
-    </div>
+    <label class="form-label">Cliente:</label>
+    <select asp-for="IdCliente" class="form-select" required>
+        <option value="">-- Seleccionar Cliente --</option>
+        @if (ViewBag.Clientes != null)
+        {
+            @* El sistema usará automáticamente el Cliente que vive en la DLL *@
+            foreach (var c in (IEnumerable<Topardex.Cliente>)ViewBag.Clientes)
+            {
+                <option value="@c.IdCliente">@c.Nombre @c.Apellido</option> }
+        }
+    </select>
+</div>
 
     <h4>Productos</h4>
     <table class="table" id="tablaProductos">

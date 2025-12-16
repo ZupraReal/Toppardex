@@ -9,8 +9,9 @@
 
 <div class="card shadow">
     <div class="card-body">
-        <p><strong>ID:</strong> @Model.IdPedido</p>
-        <p><strong>Cliente:</strong> @Model.IdCliente</p>
+        
+        <p><strong>Cliente:</strong> @ViewBag.NombreCliente</p>
+        
         <p><strong>Fecha:</strong> @(Model.FechaVenta.HasValue ? Model.FechaVenta.Value.ToString("dd/MM/yyyy HH:mm") : "-")</p>
         <p><strong>Total:</strong> $@Model.Total</p>
 
@@ -26,8 +27,7 @@
                     @foreach (var it in Model.Productos)
                     {
                         <tr>
-                            <td>@it.IdProducto</td>
-                            <td>@it.Cantidad</td>
+                            <td>@it.IdProducto</td> <td>@it.Cantidad</td>
                             <td>$@it.PrecioUnitario</td>
                             <td>$@(it.Cantidad * it.PrecioUnitario)</td>
                         </tr>
