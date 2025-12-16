@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj": {}
+    "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj": {
+    "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
+        "projectUniqueName": "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
         "projectName": "AdoDapper",
-        "projectPath": "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
+        "projectPath": "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\AdoDapper.csproj",
         "packagesPath": "C:\\Users\\Zupra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\obj\\",
+        "outputPath": "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\AdoDapper\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zupra\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj": {
-                "projectPath": "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj"
+              "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj": {
+                "projectPath": "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj": {
+    "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj",
+        "projectUniqueName": "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj",
         "projectName": "top",
-        "projectPath": "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj",
+        "projectPath": "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\top.csproj",
         "packagesPath": "C:\\Users\\Zupra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\obj\\",
+        "outputPath": "c:\\Users\\Zupra\\Documents\\GitHub\\Toppardex\\src\\top\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zupra\\AppData\\Roaming\\NuGet\\NuGet.Config"
